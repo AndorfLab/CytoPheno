@@ -11,7 +11,7 @@ Post-clustered expression data is inputted via the Input Expression Data tab wit
 
 
 # Index
-1. **[Installation](https://github.com/AmandaRT18/work-in-progress/wiki/Installation)** – Installation instructions and R packages that are required to run the application  
+1. **[Installation](https://github.com/AmandaRT18/work-in-progress/wiki/1.-Installation)** – Installation instructions and R packages that are required to run the application  
 
 2. **[Example Data](https://github.com/AmandaRT18/work-in-progress/wiki/Example-Data)** – Example datasets that can be used to demonstrate the application   
 
