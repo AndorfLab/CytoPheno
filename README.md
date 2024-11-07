@@ -11,7 +11,7 @@ Post-clustered expression data is inputted via the Input Expression Data tab wit
 
 
 # Index
-**[[Installation|../../wiki/Installation]]** – Installation instructions and R packages that are required to run the application  
+**[[Installation|https://github.com/AmandaRT18/work-in-progress/wiki/Installation]]** – Installation instructions and R packages that are required to run the application  
 
 **[[Example Data|Example Data]]** – Example datasets that can be used to demonstrate the application   
 
