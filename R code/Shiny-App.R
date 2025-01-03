@@ -32,7 +32,6 @@ onto_endpoint <- "https://sparql.hegroup.org/sparql"
 # Define the Wikidata endpoint
 wiki_endpoint <- "https://query.wikidata.org/bigdata/namespace/wdq/sparql"
 
-
 #################################################################
 ##                          FUNCTIONS                          ##
 #################################################################
@@ -3037,8 +3036,6 @@ server <- function(input, output, session) {
   # Step 4, change format of marker difference equation results
   reformatted_data_1 <- eventReactive(input$submit_tab1_step3, {
 
-    setwd("C:/Users/tur4sj/OneDrive - cchmc/Aim_2_Semantic_Naming")
-
     # Marker difference equation results
     inputted_df <- merged_marker_diff_eq_results()
 
@@ -3686,7 +3683,6 @@ server <- function(input, output, session) {
 
         # Remove unmatched
         ref_df_new2 <- subset(ref_df_new, Contradiction != 0)
-
 
         # Sort, put into final format for export
         final_matched_output2 <- ref_df_new2 %>%
@@ -7797,8 +7793,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
 # Step 1, change format of uploaded input file or inputted text
 reformatted_data_2 <-  eventReactive(input$submit_tab2_step1, {
-
-  setwd("C:/Users/tur4sj/OneDrive - cchmc/Aim_2_Semantic_Naming")
 
   if (is.null(check_input_file_2()) == TRUE) {
 
