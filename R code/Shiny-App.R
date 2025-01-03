@@ -26,9 +26,6 @@ library(shiny.destroy) # Fully remove shiny objects
 library(httr) # Connect to ontologies
 library(jsonlite) # Convert from JSON to R list after SPARQL output
 
-# Set working directory
-setwd("C:/Users/tur4sj/OneDrive - cchmc/Aim_2_Semantic_Naming")
-
 # Define the Ontobee/Hegroup endpoint
 onto_endpoint <- "https://sparql.hegroup.org/sparql"
 
