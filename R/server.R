@@ -40,7 +40,7 @@
 source("endpoints.R")
 source("protein_SPARQL.R")
 source("integer_breaks.R")
-#source("example-files.R")
+source("example-files.R")
 
 # Increase max size for uploaded files
 options(shiny.maxRequestSize = 60*1024^2)
