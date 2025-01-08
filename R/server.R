@@ -32,14 +32,15 @@
 #'
 #' @return server
 #'
-source("./R/endpoints.R")
-source("./R/protein_SPARQL.R")
-source("./R/integer_breaks.R")
-source("./R/example-files.R")
+#source("./R/endpoints.R")
+#source("./R/protein_SPARQL.R")
+#source("./R/integer_breaks.R")
+#source("./R/example-files.R")
 
-#source("endpoints.R")
-#source("protein_SPARQL.R")
-#source("integer_breaks.R")
+source("endpoints.R")
+source("protein_SPARQL.R")
+source("integer_breaks.R")
+source("example-files.R")
 
 # Increase max size for uploaded files
 options(shiny.maxRequestSize = 60*1024^2)
