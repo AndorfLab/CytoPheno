@@ -40,7 +40,7 @@
 source("endpoints.R")
 source("protein_SPARQL.R")
 source("integer_breaks.R")
-source("example-files.R")
+#source("example-files.R")
 
 # Increase max size for uploaded files
 options(shiny.maxRequestSize = 60*1024^2)
@@ -66,7 +66,7 @@ server_app <- function(input, output, session) {
     },
     # Write to csv
     content = function(file) {
-      utils::write.csv(Kimmey_5hr_stim2, file, row.names = FALSE) #utils::write.csv(Kimmey_5hr_stim,  file, row.names = FALSE)
+      utils::write.csv(Kimmey_5hr_stim, file, row.names = FALSE) #utils::write.csv(Kimmey_5hr_stim,  file, row.names = FALSE)
     }
   )
 
@@ -1171,7 +1171,7 @@ server_app <- function(input, output, session) {
     },
     # Write to csv
     content = function(file) {
-      utils::write.csv(Lee_AML_cell_types_markers2,  file, row.names = FALSE)
+      utils::write.csv(Lee_AML_cell_types_markers,  file, row.names = FALSE)
     }
   )
 
@@ -6142,7 +6142,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     },
     # Write to csv
     content = function(file) {
-      utils::write.csv(Dusoswa_OMIP_54_markers2,  file, row.names = FALSE)
+      utils::write.csv(Dusoswa_OMIP_54_markers,  file, row.names = FALSE)
     }
   )
 
@@ -6154,7 +6154,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     },
     # Write to csv
     content = function(file) {
-      utils::write.csv(Lee_AML_cell_types_markers2,  file, row.names = FALSE)
+      utils::write.csv(Lee_AML_cell_types_markers,  file, row.names = FALSE)
     }
   )
 
