@@ -1,7 +1,7 @@
 # Get list of species that are represented in the Protein Ontology
 
-source("./R/endpoints.R")
-#source("endpoints.R")
+#source("./R/endpoints.R")
+source("endpoints.R")
 
 library(magrittr)
 
