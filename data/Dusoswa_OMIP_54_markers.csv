@@ -1,0 +1,9 @@
+Cluster,Markers
+1,CD11chigh
+2,"CD11b-, CD3+, TCRb+, CD8+, CD4-"
+3," CD11b-, CD3+, TCRb+, CD8-, CD4+"
+4," CD11b-, CD3+, TCRb+, CD8-, CD4+, FoxP3+"
+5,"CD45low, CD11b+, CD44-, CD49d-"
+6," CD11b+, Ly6G+"
+7," CD11b+,  Ly6G-, Ly6Chigh, CCR2high, CD49d+"
+8," CD11b+,  Ly6G-"
