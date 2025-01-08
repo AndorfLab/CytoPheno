@@ -19,13 +19,13 @@
 #' @importFrom magrittr %>%
 #'
 #'
-source("./R/get-input_choices.R")
-source("./R/get-species.R")
-source("./R/endpoints.R")
+#source("./R/get-input_choices.R")
+#source("./R/get-species.R")
+#source("./R/endpoints.R")
 
-#source("get-input_choices.R")
-#source("get-species.R")
-#source("endpoints.R")
+source("get-input_choices.R")
+source("get-species.R")
+source("endpoints.R")
 
 ui_app <- function(req){
   fluidPage(
