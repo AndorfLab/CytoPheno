@@ -1,4 +1,4 @@
-l#' Shiny app server
+#' Shiny app server
 #'
 #' @name server_app
 #' @param input Object that contains all the input data sent from the browser, read only
