@@ -48,7 +48,7 @@ options(shiny.maxRequestSize = 60*1024^2)
 
 server_app <- function(input, output, session) {
 
- Kimmey_5hr_stim <- read.csv("data/Kimmey_5hr_stim.csv", header = TRUE)
+ Kimmey_5hr_stim <- read.csv("./data/Kimmey_5hr_stim.csv", header = TRUE)
   #################################################################
   ##                            Tab 1:                           ##
   ##                            Server                           ##
