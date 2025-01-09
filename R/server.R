@@ -47,8 +47,9 @@ options(shiny.maxRequestSize = 60*1024^2)
 
 
 server_app <- function(input, output, session) {
-
- Kimmey_5hr_stim <- read.csv("./AmandaRT18/Cell.Naming/data/Kimmey_5hr_stim.csv", header = TRUE)
+ 
+# url1 <-'https://raw.github.com/aronlindberg/latent_growth_classes/master/LGC_data.csv'
+ Kimmey_5hr_stim <- read.csv("raw.github.com/AmandaRT18/Cell.Naming/data/Kimmey_5hr_stim.csv", header = TRUE)
  Dusoswa_OMIP_54_markers <- read.csv("./AmandaRT18/Cell.Naming/data/Dusoswa_OMIP_54_markers.csv", header = TRUE)
  Lee_AML_cell_types_markers <- read.csv("./AmandaRT18/Cell.Naming/data/Lee_AML_cell_types_markers.csv", header = TRUE)
  
