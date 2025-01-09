@@ -563,7 +563,7 @@ ui_app <- function(req){
                                          h2("Overview"),
                                          p("The full application takes post-clustering flow or mass cytometry expression data as the input, returns marker definitions per cluster (Part 1), standardizes marker names (Part 2), and finally matches to cell type names (Part 3)."),
                                          p("If the user prefers to directly input marker descriptions (e.g. CD4+, CD8-) and skip Part 1, they can do so through the ", strong("Input Marker Descriptors"), "tab"),
-                                         p("More information on this tool, including examples files and a comprehensive user guide, can be found on the", a(href = 'https://github.com/AmandaRT18/work-in-progress', target="_blank", " GitHub", .noWS = "outside"),".", .noWS = c("after-begin", "before-end")),
+                                         p("More information on this tool, including examples files and a comprehensive user guide, can be found on the", a(href = 'https://github.com/AmandaRT18/Cell.Naming', target="_blank", " GitHub", .noWS = "outside"),".", .noWS = c("after-begin", "before-end")),
 
 
                                          img(src='Overview-input-expression-values.png', align = "center", width = "100%")
@@ -1070,7 +1070,7 @@ ui_app <- function(req){
                                          h2("Overview"),
                                          p("This part of the application uses marker descriptions (e.g. CD4+, CD8-) as the input, standardizes marker names (Part 1) and matches to cell type names (Part 2)."),
                                          p("If the user prefers to directly input post-clustered expression data and add an additional Part, they can do so through the ", strong("Input Expression Data"), "tab"),
-                                         p("More information on this tool, including examples files and a comprehensive user guide, can be found on the", a(href = 'https://github.com/AmandaRT18/work-in-progress', target="_blank", " GitHub", .noWS = "outside"),".", .noWS = c("after-begin", "before-end")),
+                                         p("More information on this tool, including examples files and a comprehensive user guide, can be found on the", a(href = 'https://github.com/AmandaRT18/Cell.Naming', target="_blank", " GitHub", .noWS = "outside"),".", .noWS = c("after-begin", "before-end")),
 
                                          img(src='Overview-input-marker-definitions.png', align = "center", width = "100%")
 
