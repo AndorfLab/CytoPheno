@@ -32,30 +32,23 @@
 #'
 #' @return server
 #'
-#source(".git/R/endpoints.R")
-#source(".git/R/protein_SPARQL.R")
-#source("../R/integer_breaks.R")
-#source("../R/example-files.R")
-
 source("endpoints.R")
 source("protein_SPARQL.R")
 source("integer_breaks.R")
-#source("example-files.R")
 
 # Increase max size for uploaded files
 options(shiny.maxRequestSize = 60*1024^2)
 
-
 server_app <- function(input, output, session) {
  
  url1 <-"https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Kimmey_5hr_stim.csv"
- Kimmey_5hr_stim <- read.csv(url1, header = TRUE)  # read.csv("raw.github.com/AmandaRT18/Cell.Naming/data/Kimmey_5hr_stim.csv", header = TRUE)
+ Kimmey_5hr_stim <- read.csv(url1, header = TRUE)  
 
  url2 <-"https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Dusoswa_OMIP_54_markers.csv"
- Dusoswa_OMIP_54_markers <- read.csv(url2, header = TRUE)  #read.csv("./AmandaRT18/Cell.Naming/data/Dusoswa_OMIP_54_markers.csv", header = TRUE)
+ Dusoswa_OMIP_54_markers <- read.csv(url2, header = TRUE) 
 
  url3 <- "https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Lee_AML_cell_types_markers.csv"
- Lee_AML_cell_types_markers <- read.csv(url3, header = TRUE) # read.csv("./AmandaRT18/Cell.Naming/data/Lee_AML_cell_types_markers.csv", header = TRUE)
+ Lee_AML_cell_types_markers <- read.csv(url3, header = TRUE) 
  
   #################################################################
   ##                            Tab 1:                           ##
