@@ -110,7 +110,7 @@ server_app <- function(input, output, session) {
       For example, if 40 markers were used to define 50,000 cells, the file should contain expression values for 50,000 rows and 41 columns (40 markers + the cluster column).
       <br>
       <br>"),
-      tags$div("An example expression input file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example expression input file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -379,7 +379,7 @@ server_app <- function(input, output, session) {
       <li>Delete Markers: Select the row containing the marker(s) to delete. Multiple rows can be selected at once. Once the desired markers are highlighted, click 'Delete Marker(s)' at the bottom. Note: Deleting markers is irreversible unless you reset the tool via the sidebar.</li>
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1150,7 +1150,7 @@ server_app <- function(input, output, session) {
       The dimensions and label sizes of the plots can be adjusted via slider bars at the bottom. Heatmaps are interactive ??? hovering over any section reveals the row, column, and value, and users can zoom in on specific areas. These plots can also be downloaded as PNG files using the camera icon. Density plots are not interactive, but users can right-click to copy or save them.
       <br>
       <br>"),
-      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1195,7 +1195,7 @@ server_app <- function(input, output, session) {
       <br>
       </ul>
       </ul>"),
-      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1402,7 +1402,7 @@ server_app <- function(input, output, session) {
       A 'Download' button at the bottom of the page allows users to export the results as a ZIP file containing multiple CSVs. These files reflect the current editable data frame, so any changes will be immediately reflected in the CSV exports.
       <br>
       <br>"),
-      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1655,7 +1655,7 @@ server_app <- function(input, output, session) {
       <br>
       <br>
      "),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.2.-Input-Expression-Data-and-Uploaded-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.2.-Input-Expression-Data-and-Uploaded-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -2422,7 +2422,7 @@ server_app <- function(input, output, session) {
       A data frame is displayed, showing the original marker names and any suggested names. The last column, 'Type New Marker Name', is editable, allowing users to propose new names. These new names will be reprocessed to check for matches within the multistep workflow.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -3955,7 +3955,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       Users can download the matched terms in CSV format using the 'Download' button.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6116,7 +6116,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       The 'Download' button at the bottom allows users to export a CSV file containing all relevant data, including additional columns detailing the number of markers in the input, CL cell types, matches, and contradictions.
       <br>
       <br>"),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6207,7 +6207,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       </ul>
       </ul>
        <br>"),
-      tags$div(" An example marker definition file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div(" An example marker definition file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6230,7 +6230,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       <br>
       </ul>
       </ul>"),
-      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6664,7 +6664,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       <br>
       <br>
      "),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/4.2.-Input-Marker-Descriptors-and-Uploaded-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.2.-Input-Marker-Descriptors-and-Uploaded-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -7408,7 +7408,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       A data frame is displayed, showing the original marker names and any suggested names. The last column, 'Type New Marker Name', is editable, allowing users to propose new names. These new names will be reprocessed to check for matches within the multistep workflow.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -8225,7 +8225,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       Users can download the matched terms in CSV format using the 'Download' button.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -9072,7 +9072,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       The 'Download' button at the bottom allows users to export a CSV file containing all relevant data, including additional columns detailing the number of markers in the input, CL cell types, matches, and contradictions.
       <br>
       <br>"),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/work-in-progress/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
