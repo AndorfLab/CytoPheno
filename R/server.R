@@ -8048,7 +8048,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
       replacements <- merge(replacements, new_df, by = "Marker2")
 
-      replacements <- replacements[,c(2,4)]
+      replacements <- replacements[,c(2,3)]
 
       colnames(replacements) <- c("New_Name", "Original_Name")
 
