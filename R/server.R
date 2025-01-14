@@ -2333,6 +2333,8 @@ server_app <- function(input, output, session) {
     shiny.destroy::removeOutput("spaces2")
     shiny.destroy::removeOutput("spaces3")
     shiny.destroy::removeOutput("overview_tab1_step3")
+   shinyjs::show("overview_uploaded_ref_1")
+   
     shiny.destroy::removeOutput("marker_diff_eq_heatmap_raw_row_size2")
     shiny.destroy::removeOutput("marker_diff_eq_heatmap_raw_column_size2")
     shiny.destroy::removeOutput("heatmap_height_size2")
@@ -2345,7 +2347,6 @@ server_app <- function(input, output, session) {
     shiny.destroy::removeOutput("expr_density_ex_plot")
     shiny.destroy::removeOutput("cutoff_parameters")
     shiny.destroy::removeOutput("download_marker_diff_eq_csv")
-    shinyjs::show("overview_uploaded_ref_1")
 
     # Step 4, uploaded reference, make datatable of matched cell types
     output$uploaded_ref_matches_1_dt <- DT::renderDT({
