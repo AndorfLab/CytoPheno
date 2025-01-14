@@ -701,7 +701,8 @@ server_app <- function(input, output, session) {
 
   # Step 2, Median Difference Equation, cutoffs
   heatmap_marker_diff_eq_results <- reactive({
-
+  shiny::req(input$submit_tab1_step2)
+   
     if (input$marker_diff_eq_option == 'default_marker_diff_eq') {
 
       # Marker designated as positive or negative
@@ -802,7 +803,8 @@ server_app <- function(input, output, session) {
 
   # Step 2, Median Difference Equation heatmap (cutoffs)
   marker_diff_eq_heatmap_binary_ex <- reactive({
-
+  shiny::req(input$submit_tab1_step2)
+   
     # Delineate positives vs negatives
     marker_diff_eq_results_bi <- heatmap_marker_diff_eq_results()
 
@@ -1132,7 +1134,7 @@ server_app <- function(input, output, session) {
   })
 
   output$marker_diff_eq_heatmap_binary_ex_plot2 = shiny::renderUI({
-    #   shiny::req(input$submit_tab1_step2)
+       shiny::req(input$submit_tab1_step2)
 
     heatmap_height = input$heatmap_height_size + 20
 
