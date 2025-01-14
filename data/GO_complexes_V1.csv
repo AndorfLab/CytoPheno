@@ -1,0 +1,106 @@
+Inputted_Name,Matched_GO_term,Matched_Descriptive_GO_name
+FCGRIII,http://purl.obolibrary.org/obo/GO_0033001,Fc-gamma receptor III complex
+FCGRIIICOMPLEX,http://purl.obolibrary.org/obo/GO_0033001,Fc-gamma receptor III complex
+FCGAMMARECEPTORIII,http://purl.obolibrary.org/obo/GO_0033001,Fc-gamma receptor III complex
+FCGAMMARECEPTORIIICOMPLEX,http://purl.obolibrary.org/obo/GO_0033001,Fc-gamma receptor III complex
+IMMUNOGLOBULIN,http://purl.obolibrary.org/obo/GO_0019814,immunoglobulin complex
+IMMUNOGLOBULINCOMPLEX,http://purl.obolibrary.org/obo/GO_0019814,immunoglobulin complex
+IG,http://purl.obolibrary.org/obo/GO_0019814,immunoglobulin complex
+IGCOMPLEX,http://purl.obolibrary.org/obo/GO_0019814,immunoglobulin complex
+IMMUNOGLOBULINA,http://purl.obolibrary.org/obo/GO_0071745,IgA immunoglobulin complex
+IMMUNOGLOBULINACOMPLEX,http://purl.obolibrary.org/obo/GO_0071745,IgA immunoglobulin complex
+IGA,http://purl.obolibrary.org/obo/GO_0071745,IgA immunoglobulin complex
+IGACOMPLEX,http://purl.obolibrary.org/obo/GO_0071745,IgA immunoglobulin complex
+IMMUNOGLOBULIND,http://purl.obolibrary.org/obo/GO_0071738,IgD immunoglobulin complex
+IMMUNOGLOBULINDCOMPLEX,http://purl.obolibrary.org/obo/GO_0071738,IgD immunoglobulin complex
+IGD,http://purl.obolibrary.org/obo/GO_0071738,IgD immunoglobulin complex
+IGDCOMPLEX,http://purl.obolibrary.org/obo/GO_0071738,IgD immunoglobulin complex
+IGE,http://purl.obolibrary.org/obo/GO_0071742,IgE immunoglobulin complex
+IGECOMPLEX,http://purl.obolibrary.org/obo/GO_0071742,IgE immunoglobulin complex
+IMMUNOGLOBULINE,http://purl.obolibrary.org/obo/GO_0071742,IgE immunoglobulin complex
+IMMUNOGLOBULINECOMPLEX,http://purl.obolibrary.org/obo/GO_0071742,IgE immunoglobulin complex
+IMMUNOGLOBULING,http://purl.obolibrary.org/obo/GO_0071735,IgG immunoglobulin complex
+IMMUNOGLOBULINGCOMPLEX,http://purl.obolibrary.org/obo/GO_0071735,IgG immunoglobulin complex
+IGG,http://purl.obolibrary.org/obo/GO_0071735,IgG immunoglobulin complex
+IGGCOMPLEX,http://purl.obolibrary.org/obo/GO_0071735,IgG immunoglobulin complex
+IMMUNOGLOBULINM,http://purl.obolibrary.org/obo/GO_0071753,IgM immunoglobulin complex
+IMMUNOGLOBULINMCOMPLEX,http://purl.obolibrary.org/obo/GO_0071753,IgM immunoglobulin complex
+IGM,http://purl.obolibrary.org/obo/GO_0071753,IgM immunoglobulin complex
+IGMCOMPLEX,http://purl.obolibrary.org/obo/GO_0071753,IgM immunoglobulin complex
+TCRAB,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRA/B,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRABCOMPLEX,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRA/BCOMPLEX,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+ABTCR,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+ABTCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+ALPHABETATCR,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+ALPHABETATCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRALPHABETA,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRALPHABETACOMPLEX,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRA,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRB,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRALPHA,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRBETA,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+ALPHATCR,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+BETATCR,http://purl.obolibrary.org/obo/GO_0042105,alpha-beta T cell receptor complex
+TCRGD,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRGDCOMPLEX,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRG/D,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRG/DCOMPLEX,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+GDTCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+GDTCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+GAMMADELTATCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+GAMMADELTATCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRGAMMADELTA,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRGAMMADELTACOMPLEX,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRG,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRD,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRGAMMA,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRDELTA,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+GAMMATCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+DELTATCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+YTCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRY,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+TCRYD,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+YDTCR,http://purl.obolibrary.org/obo/GO_0042106,gamma-delta T cell receptor complex
+BCR,http://purl.obolibrary.org/obo/GO_0019815,B cell receptor complex
+BCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0019815,B cell receptor complex
+BCELLRECEPTORCOMPLEX,http://purl.obolibrary.org/obo/GO_0019815,B cell receptor complex
+BCELLRECEPTOR,http://purl.obolibrary.org/obo/GO_0019815,B cell receptor complex
+PREBCR,http://purl.obolibrary.org/obo/GO_0035369,pre-B cell receptor complex
+PREBCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0035369,pre-B cell receptor complex
+PREBCELLRECEPTORCOMPLEX,http://purl.obolibrary.org/obo/GO_0035369,pre-B cell receptor complex
+PREBCELLRECEPTOR,http://purl.obolibrary.org/obo/GO_0035369,pre-B cell receptor complex
+PRETCR,http://purl.obolibrary.org/obo/GO_0043384,pre-T cell receptor complex
+PRETCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0043384,pre-T cell receptor complex
+PRETCELLRECEPTOR,http://purl.obolibrary.org/obo/GO_0043384,pre-T cell receptor complex
+PRETCELLRECEPTORCOMPLEX,http://purl.obolibrary.org/obo/GO_0043384,pre-T cell receptor complex
+TCR,http://purl.obolibrary.org/obo/GO_0042101,T cell receptor complex
+TCRCOMPLEX,http://purl.obolibrary.org/obo/GO_0042101,T cell receptor complex
+TCELLRECEPTOR,http://purl.obolibrary.org/obo/GO_0042101,T cell receptor complex
+TCELLRECEPTORCOMPLEX,http://purl.obolibrary.org/obo/GO_0042101,T cell receptor complex
+HLAD,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADP,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADPA1,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADPB1,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADM,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADMA,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADMB,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADO,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADOA,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADOB,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADQ,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADQA1,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADQA2,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADQB1,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADQB2,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADR,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADRA,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADRB1,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADRB3,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADRB4,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+HLADRB5,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+MHCII,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+MHCIICOMPLEX,http://purl.obolibrary.org/obo/GO_0042613,MHC class II protein complex
+MHC,http://purl.obolibrary.org/obo/GO_0042611,MHC protein complex
+MHCCOMPLEX,http://purl.obolibrary.org/obo/GO_0042611,MHC protein complex
