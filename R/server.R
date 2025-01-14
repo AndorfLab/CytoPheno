@@ -8959,7 +8959,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 2, remove link from PRO/GO term for download, 1st dataset
   downloadable_step_2 <- reactive({
-
+  shiny::req(input$submit_tab2_step2)
+   
     remove_link <- df2_2$data
 
     if (all(remove_link$`PRO/GO Term` == "Did not match")) {
@@ -8982,7 +8983,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 2, 2nd dataset, all info
   downloadable_step_2_long <-  reactive({
-
+  shiny::req(input$submit_tab2_step2)
+   
     markers <- downloadable_step_2()
 
     signs_clusters <- reformatted_data_2()
@@ -11079,7 +11081,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 3, if multiple clusters, change dataframe if filtered by cluster
   df_subsettable_2 <- reactive({
-
+  shiny::req(input$submit_tab2_step3)
+   
     df <- return_cell_types_linked_2()
 
     if (!is.null(df) & length(unique(df$Cluster)) > 1) {
