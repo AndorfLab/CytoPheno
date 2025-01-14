@@ -2562,26 +2562,26 @@ server_app <- function(input, output, session) {
       wikidata_taxon_ID <- df$item
 
       # List of specific protein suggestions
-      marker_alt <- utils::read.csv("specific_suggestions_V1.csv", header = TRUE)
+      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
       # List of GO complexes that are included in CL definitions
-      GO_complexes <- utils::read.csv("GO_complexes_V1.csv", header = TRUE)
+      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
       ## List of CD synonym (adapted from list published by HCDM)
-      CD_syn <- utils::read.csv("Curated_synonyms_V1.csv", header = TRUE)
+      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
       # Auto replacements
-      replace_markers <- utils::read.csv("replace_markers_V1.csv", header=TRUE)
+      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
       ## Lists of non-specific suggestions
       # List of non-protein words that were found in markers from the deveolpment data
-      common_non_protein_words <- utils::read.csv("common_non_protein_words_V1.csv", header = FALSE)
+      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
 
       # List of metal tags that were found in the development data
-      commonly_used_metal_tags <- utils::read.csv("commonly_used_metal_tags_V1.csv", header = FALSE)
+      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
 
       # List of fluorophores tags that were  found in the development data
-      commonly_used_fluorophores <- utils::read.csv("commonly_used_fluorophores_V1.csv", header = FALSE)
+      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
 
       # Make markers uppercase and remove dashes, underscores, periods, and spaces
       new_df$Marker2 <- toupper(new_df$Marker)
@@ -3312,13 +3312,13 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     wikidata_taxon_ID <- df$item
 
     # List of specific protein suggestions
-    marker_alt <- utils::read.csv("specific_suggestions_V1.csv", header = TRUE)
+    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
     # List of GO complexes that are included in CL definitions
-    GO_complexes <- utils::read.csv("GO_complexes_V1.csv", header = TRUE)
+    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
     ## List of CD synonym (adapted from list published by HCDM)
-    CD_syn <- utils::read.csv("Curated_synonyms_V1.csv", header = TRUE)
+    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
     # Make markers uppercase and remove dashes, underscores, periods, and spaces
     new_df$Marker2 <- toupper(new_df$`Type new marker name`)
@@ -3345,7 +3345,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
     # Auto replacements
-    replace_markers <- utils::read.csv("replace_markers_V1.csv", header=TRUE)
+    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
     auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
@@ -7582,26 +7582,26 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       wikidata_taxon_ID <- df$item
 
       # List of specific protein suggestions
-      marker_alt <- utils::read.csv("specific_suggestions_V1.csv", header = TRUE)
+      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
       # List of GO complexes that are included in CL definitions
-      GO_complexes <- utils::read.csv("GO_complexes_V1.csv", header = TRUE)
+      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
       ## List of CD synonym (adapted from list published by HCDM)
-      CD_syn <- utils::read.csv("Curated_synonyms_V1.csv", header = TRUE)
+      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
       # Auto replacements
-      replace_markers <- utils::read.csv("replace_markers_V1.csv", header=TRUE)
+      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
       ## Lists of non-specific suggestions
       # List of non-protein words that were found in markers from the deveolpment data
-      common_non_protein_words <- utils::read.csv("common_non_protein_words_V1.csv", header = FALSE)
+      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
 
       # List of metal tags that were found in the development data
-      commonly_used_metal_tags <- utils::read.csv("commonly_used_metal_tags_V1.csv", header = FALSE)
+      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
 
       # List of fluorophores tags that were  found in the development data
-      commonly_used_fluorophores <- utils::read.csv("commonly_used_fluorophores_V1.csv", header = FALSE)
+      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
 
       # Make markers uppercase and remove dashes, underscores, periods, and spaces
       new_df$Marker2 <- toupper(new_df$Marker)
@@ -8559,13 +8559,13 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     wikidata_taxon_ID <- df$item
 
     # List of specific protein suggestions
-    marker_alt <- utils::read.csv("specific_suggestions_V1.csv", header = TRUE)
+    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
     # List of GO complexes that are included in CL definitions
-    GO_complexes <- utils::read.csv("GO_complexes_V1.csv", header = TRUE)
+    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
     ## List of CD synonym (adapted from list published by HCDM)
-    CD_syn <- utils::read.csv("Curated_synonyms_V1.csv", header = TRUE)
+    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
     # Make markers uppercase and remove dashes, underscores, periods, and spaces
     new_df$Marker2 <- toupper(new_df$`Type new marker name`)
@@ -8592,7 +8592,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
     # Auto replacements
-    replace_markers <- utils::read.csv("replace_markers_V1.csv", header=TRUE)
+    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
     auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
