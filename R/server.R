@@ -1134,8 +1134,8 @@ server_app <- function(input, output, session) {
   })
 
   output$marker_diff_eq_heatmap_binary_ex_plot2 = shiny::renderUI({
-       shiny::req(input$submit_tab1_step2)
-
+     #  shiny::req(input$submit_tab1_step2)
+   
     heatmap_height = input$heatmap_height_size + 20
 
     density_height = input$density_height_size + 20
