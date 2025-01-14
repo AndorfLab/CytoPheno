@@ -2495,7 +2495,8 @@ server_app <- function(input, output, session) {
 
   # Step 4, match inputted markers to PRO terms
   PRO_results_1 <- reactive({
-
+  shiny::req(input$submit_tab1_step3)
+   
     if (is.data.frame(reformatted_data_1()) == TRUE) {
 
       ## Species, references, initial dataframe
@@ -3244,7 +3245,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # OG Step 5, look up PRO IDs for the revised marker names
   new_PRO_matches_1 <- reactive({
-
+  shiny::req(input$submit_tab1_step4)
+   
     ######## Species, references, initial dataframe ########
 
     new_df <- df_1$data
@@ -3910,7 +3912,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 5, remove link from PRO/GO term for download, 1st dataset
   downloadable_step_1 <- reactive({ # eventReactive(input$submit_tab1_step4, {
-
+  shiny::req(input$submit_tab1_step4)
+   
     remove_link <- df2_1$data
 
     if (all(remove_link$`PRO/GO Term` == "Did not match")) {
@@ -3933,7 +3936,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 5, 2nd dataset, all info
   downloadable_step_1_long <- reactive({
-
+  shiny::req(input$submit_tab1_step4)
+   
     markers <- downloadable_step_1()
 
     signs_clusters <- reformatted_data_1()
@@ -6070,6 +6074,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 6, if multiple clusters, change dataframe if filtered by cluster
   df_subsettable_1 <- reactive({
+   shiny::req(input$submit_tab1_step5)
     df <- return_cell_types_linked_1()
     if (!is.null(df) & length(unique(df$Cluster)) > 1) {
       df2 <- df[df$Cluster %in% input$show_specific_cluster_1,]
@@ -6081,6 +6086,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 6, get how many clusters are in final output for filtering purposes
   output$specific_cluster_1 <- shiny::renderUI({
+   shiny::req(input$submit_tab1_step5)
     final_df <- return_cell_types_linked_1()
     if (!is.null(final_df) & length(unique(final_df$Cluster)) > 1) {
       shiny::selectInput(inputId = "show_specific_cluster_1",
