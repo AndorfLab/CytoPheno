@@ -2502,6 +2502,7 @@ server_app <- function(input, output, session) {
   # Step 4, match inputted markers to PRO terms
   PRO_results_1 <- reactive({
   shiny::req(input$submit_tab1_step3)
+  shiny::req(input$reference_type_1 == 'internal_ref_1')
    
     if (is.data.frame(reformatted_data_1()) == TRUE) {
 
@@ -2756,7 +2757,6 @@ server_app <- function(input, output, session) {
         Specific_protein_sugg_matches <- data.frame(Marker = "", PRO_term = "", PRO_name = "", Species = "", Match_type = "", Match_step = "")
       }
 
-
       ## CD synonym list, then SPAPRQL query to PRO
 
       # Search CD synonym list, then if there are synonyms query them in PRO
@@ -2887,7 +2887,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               url = wiki_endpoint,
               query = list(query = SPARQL_query),
               httr::user_agent(R.version.string))
-
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
@@ -3095,7 +3094,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 4, if some markers were not matched to PRO terms, prompt the user to rename them
   return_alt_markers_1 <- shiny::eventReactive(input$submit_tab1_step3, {
-
+   shiny::req(input$reference_type_1 == 'internal_ref_1')
+   
     if (is.data.frame(reformatted_data_1()) == TRUE) {
       all_ids <- PRO_results_1()
 
@@ -7522,6 +7522,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   #   # Step 1, match inputted markers to PRO terms
   PRO_results_2 <- shiny::eventReactive(input$submit_tab2_step1, {
+   browser()
 
     if (is.data.frame(reformatted_data_2()) == TRUE) {
 
