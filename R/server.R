@@ -81,8 +81,7 @@ server_app <- function(input, output, session) {
     },
     # Write to csv
     content = function(file) {
-     browser()
-      utils::write.csv(Kimmey_5hr_stim, file, row.names = FALSE) #utils::write.csv(Kimmey_5hr_stim,  file, row.names = FALSE)
+      utils::write.csv(Kimmey_5hr_stim, file, row.names = FALSE) 
     }
   )
 
@@ -1838,7 +1837,6 @@ server_app <- function(input, output, session) {
   marker_in_uploaded_reference_1 <- reactive({
     shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
-#   shiny::req(input$submit_tab1_step3)
 
     input_df <- reformatted_data_1()
     ref_df <- reformatted_ref_1()
@@ -1856,7 +1854,6 @@ server_app <- function(input, output, session) {
   output$ui_warning_no_sign_ref_1 <- shiny::renderUI({
     shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
-#    shiny::req(input$submit_tab1_step3)
 
     if (is.data.frame(reformatted_ref_1()) == FALSE) {
       if (length(reformatted_ref_1()) == 1) {
@@ -1886,7 +1883,6 @@ server_app <- function(input, output, session) {
   output$ui_error_column_names_ref_1 <- shiny::renderUI({
     shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
-#    shiny::req(input$submit_tab1_step3)
 
     if (is.null(check_reference_file_1()) == TRUE) {
       if (is.null(reformatted_ref_1()) == TRUE) {
@@ -1901,7 +1897,6 @@ server_app <- function(input, output, session) {
   output$ui_warning_unmatched_markers_uploaded_ref_1 <- shiny::renderUI({
     shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
-#    shiny::req(input$submit_tab1_step3)
 
     if (is.data.frame(reformatted_data_1()) == TRUE &
         is.data.frame(reformatted_ref_1()) == TRUE) {
@@ -1943,7 +1938,6 @@ server_app <- function(input, output, session) {
   uploaded_ref_matches_1 <- reactive({
     shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
-#    shiny::req(input$submit_tab1_step3)
    
     # Make sure the uploaded reference and input are dataframes
     if (is.data.frame(reformatted_data_1()) == TRUE &
@@ -2106,7 +2100,6 @@ server_app <- function(input, output, session) {
                          ref_df_new$Sign[b] == "Low") {
                 ref_df_new$Contradiction[b] <- ref_df_new$Contradiction[b] + 1
               }}
-
 
             # If choosing low/positive, then any low signs are contradicted by negatives and highs
             if (input$low_option_upload == "low_positive_upload") {
@@ -2315,7 +2308,7 @@ server_app <- function(input, output, session) {
   output$specific_cluster_uploaded_1 <- shiny::renderUI({
      shiny::req(input$reference_type_1 == 'upload_ref_1')
     shiny::req(input$upload_ref_csv_1)
- #  shiny::req(input$submit_tab1_step3)
+   
     final_df <- uploaded_ref_results_1()
     if (!is.null(final_df) & length(unique(final_df$Cluster)) > 1) {
       shiny::selectInput(inputId = "show_specific_cluster_uploaded_1",
