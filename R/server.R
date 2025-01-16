@@ -81,6 +81,7 @@ server_app <- function(input, output, session) {
     },
     # Write to csv
     content = function(file) {
+     browser()
       utils::write.csv(Kimmey_5hr_stim, file, row.names = FALSE) #utils::write.csv(Kimmey_5hr_stim,  file, row.names = FALSE)
     }
   )
