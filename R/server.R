@@ -794,10 +794,16 @@ server_app <- function(input, output, session) {
       marker_diff_eq_results_bi[i] <- 1
     }
 
-    marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)][marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] >= type_positive_cutoff] <- "+"
-    marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)][marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] <= type_negative_cutoff] <- "-"
+    marker_diff_eq_results_bi <- dplyr::mutate_all(marker_diff_eq_results_bi, function(x) as.numeric(as.character(x)))
+    
+    marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)][marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] <= as.numeric(type_negative_cutoff)] <- "-"
+    
+    marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)][marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] >= as.numeric(type_positive_cutoff)] <- "+"
+    
     marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)][marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] != "+" & marker_diff_eq_results_bi[,2:length(marker_diff_eq_results_bi)] != "-" ] <- ""
-
+    
+    marker_diff_eq_results_bi[is.na(marker_diff_eq_results_bi)] <- ""
+    
     return(marker_diff_eq_results_bi)
   })
 
