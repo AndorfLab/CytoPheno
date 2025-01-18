@@ -2856,7 +2856,7 @@ server_app <- function(input, output, session) {
       all_ids_final <- list()
 
       if(length(unique_marker_names) != 0){
-        if(length(unique_marker_names) != 1 & unique_marker_names[1] != "") {
+        if(unique_marker_names[1] != "") {
 
           # Loop through each and do the SPARQL query
           for(marker in unique_marker_names) {
@@ -2922,6 +2922,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
               # Vector of unique marker names
               unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
+
+              unique_syn_names <- unique_syn_names[!grepl("[^\x01-\x7F]+", unique_syn_names)]
 
               unique_syn_names <- unique_syn_names[grep('[A-Za-z]',unique_syn_names)]
 
@@ -3497,7 +3499,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     all_ids_final <- list()
 
     if(length(unique_marker_names) != 0) {
-      if(length(unique_marker_names) != 1 & unique_marker_names[1] != "") {
+      if(unique_marker_names[1] != "") {
 
         # Loop through each and do the SPARQL query
         for(marker in unique_marker_names) {
@@ -3559,6 +3561,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
             # Vector of unique marker names
             unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
+
+            unique_syn_names <- unique_syn_names[!grepl("[^\x01-\x7F]+", unique_syn_names)]
 
             unique_syn_names <- unique_syn_names[grep('[A-Za-z]',unique_syn_names)]
 
@@ -7876,7 +7880,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       all_ids_final <- list()
 
       if(length(unique_marker_names) != 0){
-        if(length(unique_marker_names) != 1 & unique_marker_names[1] != "") {
+        if(unique_marker_names[1] != "") {
 
           # Loop through each and do the SPARQL query
           for(marker in unique_marker_names) {
@@ -7944,6 +7948,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Vector of unique marker names
               unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
 
+              unique_syn_names <- unique_syn_names[!grepl("[^\x01-\x7F]+", unique_syn_names)]
+                                         
               unique_syn_names <- unique_syn_names[grep('[A-Za-z]',unique_syn_names)]
 
               unique_syn_names <- unique_syn_names[!grepl(paste0('^', marker, '$'), unique_syn_names, useBytes = TRUE)]
@@ -8743,7 +8749,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     all_ids_final <- list()
 
     if(length(unique_marker_names) != 0) {
-      if(length(unique_marker_names) != 1 & unique_marker_names[1] != "") {
+      if(unique_marker_names[1] != "") {
 
         # Loop through each and do the SPARQL query
         for(marker in unique_marker_names) {
@@ -8806,6 +8812,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Vector of unique marker names
             unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
 
+             unique_syn_names <- unique_syn_names[!grepl("[^\x01-\x7F]+", unique_syn_names)]
+                                       
             unique_syn_names <- unique_syn_names[grep('[A-Za-z]',unique_syn_names)]
 
             unique_syn_names <- unique_syn_names[!grepl(paste0('^', marker, '$'), unique_syn_names, useBytes = TRUE)]
