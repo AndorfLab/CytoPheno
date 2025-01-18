@@ -2505,7 +2505,8 @@ server_app <- function(input, output, session) {
   PRO_results_1 <- reactive({
   shiny::req(input$submit_tab1_step3)
   shiny::req(input$reference_type_1 == 'internal_ref_1')
-   
+
+   browser()
     if (is.data.frame(reformatted_data_1()) == TRUE) {
 
       ## Species, references, initial dataframe
