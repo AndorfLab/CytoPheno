@@ -3255,8 +3255,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
   new_PRO_matches_1 <- reactive({
   shiny::req(input$submit_tab1_step4)
 
-   browser()
-   
     ######## Species, references, initial dataframe ########
 
     new_df <- df_1$data
@@ -3409,7 +3407,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     Match_step <- "CD synonym list"
 
     # Vector of unique marker names
-    unique_marker_names <- Direct_PRO_matches$Marker[Direct_PRO_matches$Match_step == "Directly to PRO"] # Specific_protein_sugg_matches$Marker[Specific_protein_sugg_matches$Match_step == ""]
+    unique_marker_names <- Direct_PRO_matches$Marker[Direct_PRO_matches$Match_step != "Directly to PRO"] # Specific_protein_sugg_matches$Marker[Specific_protein_sugg_matches$Match_step == ""]
 
     all_ids_final <- list()
 
@@ -8657,7 +8655,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     Match_step <- "CD synonym list"
 
     # Vector of unique marker names
-    unique_marker_names <- Direct_PRO_matches$Marker[Direct_PRO_matches$Match_step == "Directly to PRO"] # Specific_protein_sugg_matches$Marker[Specific_protein_sugg_matches$Match_step == ""]
+    unique_marker_names <- Direct_PRO_matches$Marker[Direct_PRO_matches$Match_step != "Directly to PRO"] # Specific_protein_sugg_matches$Marker[Specific_protein_sugg_matches$Match_step == ""]
 
     all_ids_final <- list()
 
