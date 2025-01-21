@@ -2918,6 +2918,9 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               df <- df[(which(nchar(df$altLabel) > 2)),]
               df <- df[(which(nchar(df$itemLabel) > 2)),]
 
+              # No marker can start with a number, so add X to any marker names that start with a number
+              df <- as.data.frame(lapply(df, function(y) gsub('^(\\d)', 'X\\1', y)))
+
               # Vector of unique marker names
               unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
 
@@ -3556,6 +3559,9 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
             df <- df[(which(nchar(df$altLabel) > 2)),]
             df <- df[(which(nchar(df$itemLabel) > 2)),]
+
+            # No marker can start with a number, so add X to any marker names that start with a number
+            df <- as.data.frame(lapply(df, function(y) gsub('^(\\d)', 'X\\1', y)))
 
             # Vector of unique marker names
             unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
@@ -7941,6 +7947,9 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               df <- df[(which(nchar(df$altLabel) > 2)),]
               df <- df[(which(nchar(df$itemLabel) > 2)),]
 
+              # No marker can start with a number, so add X to any marker names that start with a number
+              df <- as.data.frame(lapply(df, function(y) gsub('^(\\d)', 'X\\1', y)))
+
               # Vector of unique marker names
               unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
 
@@ -8804,6 +8813,9 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
             df <- df[(which(nchar(df$altLabel) > 2)),]
             df <- df[(which(nchar(df$itemLabel) > 2)),]
+
+            # No marker can start with a number, so add X to any marker names that start with a number
+            df <- as.data.frame(lapply(df, function(y) gsub('^(\\d)', 'X\\1', y)))
 
             # Vector of unique marker names
             unique_syn_names <- unique(c(df[, "altLabel"], df[, "itemLabel"]))
