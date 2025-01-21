@@ -1498,8 +1498,6 @@ server_app <- function(input, output, session) {
   # Step 4, change format of marker difference equation results
   reformatted_data_1 <- shiny::eventReactive(input$submit_tab1_step3, {
 
-    setwd("C:/Users/tur4sj/OneDrive - cchmc/Aim_2_Semantic_Naming")
-
     # Marker difference equation results
     inputted_df <- merged_marker_diff_eq_results()
 
@@ -6325,8 +6323,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 1, change format of uploaded input file or inputted text
   reformatted_data_2 <-  shiny::eventReactive(input$submit_tab2_step1, {
-
-    setwd("C:/Users/tur4sj/OneDrive - cchmc/Aim_2_Semantic_Naming")
 
     if (is.null(check_input_file_2()) == TRUE) {
 
