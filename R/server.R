@@ -2504,7 +2504,6 @@ server_app <- function(input, output, session) {
   shiny::req(input$submit_tab1_step3)
   shiny::req(input$reference_type_1 == 'internal_ref_1')
 
-   browser()
     if (is.data.frame(reformatted_data_1()) == TRUE) {
 
       ## Species, references, initial dataframe
@@ -3255,6 +3254,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
   # OG Step 5, look up PRO IDs for the revised marker names
   new_PRO_matches_1 <- reactive({
   shiny::req(input$submit_tab1_step4)
+
+   browser()
    
     ######## Species, references, initial dataframe ########
 
