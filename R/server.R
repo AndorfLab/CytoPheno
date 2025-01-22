@@ -2604,6 +2604,38 @@ server_app <- function(input, output, session) {
 
       # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
+         # If TCR is also specified in the panel, don't auto match CD3E to it
+    if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
+        any(auto_matches=="TCRABCOMPLEX") | any(auto_matches=="TCRA/BCOMPLEX" ) |
+        any(auto_matches=="ABTCR") | any(auto_matches=="ABTCRCOMPLEX" ) |
+        any(auto_matches=="ALPHABETATCR") | any(auto_matches=="ALPHABETATCRCOMPLEX" ) |
+        any(auto_matches=="TCRALPHABETA") | any(auto_matches=="TCRALPHABETACOMPLEX" ) |
+        any(auto_matches=="TCRA") | any(auto_matches=="TCRB" ) |
+        any(auto_matches=="TCRALPHA") | any(auto_matches=="TCRBETA" ) |
+        any(auto_matches=="ALPHATCR") | any(auto_matches=="BETATCR" ) |
+        any(auto_matches=="TCRGD") | any(auto_matches=="TCRGDCOMPLEX" ) |
+        any(auto_matches=="TCRG/D") | any(auto_matches=="TCRG/DCOMPLEX" ) |
+        any(auto_matches=="GDTCR") | any(auto_matches=="GDTCRCOMPLEX" ) |
+        any(auto_matches=="GAMMADELTATCR") | any(auto_matches=="GAMMADELTATCRCOMPLEX" ) |
+        any(auto_matches=="TCRGAMMADELTA") | any(auto_matches=="TCRGAMMADELTACOMPLEX" ) |
+        any(auto_matches=="TCRG") | any(auto_matches=="TCRD" ) |
+        any(auto_matches=="TCRGAMMA") | any(auto_matches=="TCRDELTA" ) |
+        any(auto_matches=="GAMMATCR") | any(auto_matches=="DELTATCR" ) |
+        any(auto_matches=="YTCR") | any(auto_matches=="TCRY" ) |
+        any(auto_matches=="TCRYD") | any(auto_matches=="YDTCR" ) |
+        any(auto_matches=="TCR") | any(auto_matches=="TCRCOMPLEX" ) |
+        any(auto_matches=="TCELLRECEPTOR") | any(auto_matches=="TCELLRECEPTORCOMPLEX" )) {
+      
+      replace_markers <- replace_markers[!grepl("TCRAB", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCRGD", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCR", replace_markers$Replacement),]
+    }
+    
+    # If CD8AB is also specified in the panel, don't auto match CD8 to it
+    if (any(auto_matches=="CD8AB") | any(auto_matches=="CD8ALPHABETA")) {
+      replace_markers <- replace_markers[!grepl("CD8ALPHABETA", replace_markers$Replacement),]
+    }
+     
       auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
       auto_replaced <- auto_matches[!is.na(auto_matches$Replacement),]
@@ -3352,6 +3384,38 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Auto replacements
     replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
+            # If TCR is also specified in the panel, don't auto match CD3E to it
+    if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
+        any(auto_matches=="TCRABCOMPLEX") | any(auto_matches=="TCRA/BCOMPLEX" ) |
+        any(auto_matches=="ABTCR") | any(auto_matches=="ABTCRCOMPLEX" ) |
+        any(auto_matches=="ALPHABETATCR") | any(auto_matches=="ALPHABETATCRCOMPLEX" ) |
+        any(auto_matches=="TCRALPHABETA") | any(auto_matches=="TCRALPHABETACOMPLEX" ) |
+        any(auto_matches=="TCRA") | any(auto_matches=="TCRB" ) |
+        any(auto_matches=="TCRALPHA") | any(auto_matches=="TCRBETA" ) |
+        any(auto_matches=="ALPHATCR") | any(auto_matches=="BETATCR" ) |
+        any(auto_matches=="TCRGD") | any(auto_matches=="TCRGDCOMPLEX" ) |
+        any(auto_matches=="TCRG/D") | any(auto_matches=="TCRG/DCOMPLEX" ) |
+        any(auto_matches=="GDTCR") | any(auto_matches=="GDTCRCOMPLEX" ) |
+        any(auto_matches=="GAMMADELTATCR") | any(auto_matches=="GAMMADELTATCRCOMPLEX" ) |
+        any(auto_matches=="TCRGAMMADELTA") | any(auto_matches=="TCRGAMMADELTACOMPLEX" ) |
+        any(auto_matches=="TCRG") | any(auto_matches=="TCRD" ) |
+        any(auto_matches=="TCRGAMMA") | any(auto_matches=="TCRDELTA" ) |
+        any(auto_matches=="GAMMATCR") | any(auto_matches=="DELTATCR" ) |
+        any(auto_matches=="YTCR") | any(auto_matches=="TCRY" ) |
+        any(auto_matches=="TCRYD") | any(auto_matches=="YDTCR" ) |
+        any(auto_matches=="TCR") | any(auto_matches=="TCRCOMPLEX" ) |
+        any(auto_matches=="TCELLRECEPTOR") | any(auto_matches=="TCELLRECEPTORCOMPLEX" )) {
+      
+      replace_markers <- replace_markers[!grepl("TCRAB", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCRGD", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCR", replace_markers$Replacement),]
+    }
+    
+    # If CD8AB is also specified in the panel, don't auto match CD8 to it
+    if (any(auto_matches=="CD8AB") | any(auto_matches=="CD8ALPHABETA")) {
+      replace_markers <- replace_markers[!grepl("CD8ALPHABETA", replace_markers$Replacement),]
+    }
+   
     auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
     auto_replaced <- auto_matches[!is.na(auto_matches$Replacement),]
@@ -7631,6 +7695,38 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
       # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
+          # If TCR is also specified in the panel, don't auto match CD3E to it
+    if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
+        any(auto_matches=="TCRABCOMPLEX") | any(auto_matches=="TCRA/BCOMPLEX" ) |
+        any(auto_matches=="ABTCR") | any(auto_matches=="ABTCRCOMPLEX" ) |
+        any(auto_matches=="ALPHABETATCR") | any(auto_matches=="ALPHABETATCRCOMPLEX" ) |
+        any(auto_matches=="TCRALPHABETA") | any(auto_matches=="TCRALPHABETACOMPLEX" ) |
+        any(auto_matches=="TCRA") | any(auto_matches=="TCRB" ) |
+        any(auto_matches=="TCRALPHA") | any(auto_matches=="TCRBETA" ) |
+        any(auto_matches=="ALPHATCR") | any(auto_matches=="BETATCR" ) |
+        any(auto_matches=="TCRGD") | any(auto_matches=="TCRGDCOMPLEX" ) |
+        any(auto_matches=="TCRG/D") | any(auto_matches=="TCRG/DCOMPLEX" ) |
+        any(auto_matches=="GDTCR") | any(auto_matches=="GDTCRCOMPLEX" ) |
+        any(auto_matches=="GAMMADELTATCR") | any(auto_matches=="GAMMADELTATCRCOMPLEX" ) |
+        any(auto_matches=="TCRGAMMADELTA") | any(auto_matches=="TCRGAMMADELTACOMPLEX" ) |
+        any(auto_matches=="TCRG") | any(auto_matches=="TCRD" ) |
+        any(auto_matches=="TCRGAMMA") | any(auto_matches=="TCRDELTA" ) |
+        any(auto_matches=="GAMMATCR") | any(auto_matches=="DELTATCR" ) |
+        any(auto_matches=="YTCR") | any(auto_matches=="TCRY" ) |
+        any(auto_matches=="TCRYD") | any(auto_matches=="YDTCR" ) |
+        any(auto_matches=="TCR") | any(auto_matches=="TCRCOMPLEX" ) |
+        any(auto_matches=="TCELLRECEPTOR") | any(auto_matches=="TCELLRECEPTORCOMPLEX" )) {
+      
+      replace_markers <- replace_markers[!grepl("TCRAB", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCRGD", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCR", replace_markers$Replacement),]
+    }
+    
+    # If CD8AB is also specified in the panel, don't auto match CD8 to it
+    if (any(auto_matches=="CD8AB") | any(auto_matches=="CD8ALPHABETA")) {
+      replace_markers <- replace_markers[!grepl("CD8ALPHABETA", replace_markers$Replacement),]
+    }
+
       auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
       auto_replaced <- auto_matches[!is.na(auto_matches$Replacement),]
@@ -8606,6 +8702,38 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Auto replacements
     replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
+            # If TCR is also specified in the panel, don't auto match CD3E to it
+    if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
+        any(auto_matches=="TCRABCOMPLEX") | any(auto_matches=="TCRA/BCOMPLEX" ) |
+        any(auto_matches=="ABTCR") | any(auto_matches=="ABTCRCOMPLEX" ) |
+        any(auto_matches=="ALPHABETATCR") | any(auto_matches=="ALPHABETATCRCOMPLEX" ) |
+        any(auto_matches=="TCRALPHABETA") | any(auto_matches=="TCRALPHABETACOMPLEX" ) |
+        any(auto_matches=="TCRA") | any(auto_matches=="TCRB" ) |
+        any(auto_matches=="TCRALPHA") | any(auto_matches=="TCRBETA" ) |
+        any(auto_matches=="ALPHATCR") | any(auto_matches=="BETATCR" ) |
+        any(auto_matches=="TCRGD") | any(auto_matches=="TCRGDCOMPLEX" ) |
+        any(auto_matches=="TCRG/D") | any(auto_matches=="TCRG/DCOMPLEX" ) |
+        any(auto_matches=="GDTCR") | any(auto_matches=="GDTCRCOMPLEX" ) |
+        any(auto_matches=="GAMMADELTATCR") | any(auto_matches=="GAMMADELTATCRCOMPLEX" ) |
+        any(auto_matches=="TCRGAMMADELTA") | any(auto_matches=="TCRGAMMADELTACOMPLEX" ) |
+        any(auto_matches=="TCRG") | any(auto_matches=="TCRD" ) |
+        any(auto_matches=="TCRGAMMA") | any(auto_matches=="TCRDELTA" ) |
+        any(auto_matches=="GAMMATCR") | any(auto_matches=="DELTATCR" ) |
+        any(auto_matches=="YTCR") | any(auto_matches=="TCRY" ) |
+        any(auto_matches=="TCRYD") | any(auto_matches=="YDTCR" ) |
+        any(auto_matches=="TCR") | any(auto_matches=="TCRCOMPLEX" ) |
+        any(auto_matches=="TCELLRECEPTOR") | any(auto_matches=="TCELLRECEPTORCOMPLEX" )) {
+      
+      replace_markers <- replace_markers[!grepl("TCRAB", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCRGD", replace_markers$Replacement),]
+      replace_markers <- replace_markers[!grepl("TCR", replace_markers$Replacement),]
+    }
+    
+    # If CD8AB is also specified in the panel, don't auto match CD8 to it
+    if (any(auto_matches=="CD8AB") | any(auto_matches=="CD8ALPHABETA")) {
+      replace_markers <- replace_markers[!grepl("CD8ALPHABETA", replace_markers$Replacement),]
+    }
+   
     auto_matches <- merge(replace_markers, auto_matches,  by = "Marker", all.y = TRUE)
 
     auto_replaced <- auto_matches[!is.na(auto_matches$Replacement),]
