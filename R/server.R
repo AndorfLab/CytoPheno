@@ -244,7 +244,7 @@ server_app <- function(input, output, session) {
 
   # Step 1, read in uploaded file
   uploaded_file <- shiny::eventReactive(input$submit_tab1_step1,{
-
+browser()
     if (is.null(check_input_file_1()) == TRUE) {
 
       file_input <- input$upload_expression_csv
@@ -262,7 +262,7 @@ server_app <- function(input, output, session) {
         read_file <- readxl::read_excel(file_input$datapath, col_names = TRUE)
       }
 
-      if (input$random_1 != 1) {
+      if (input$random_1 == 1) {
         read_file <- read_file[sample(1:nrow(read_file), input$num_random_1, replace=FALSE),]
       }
 
