@@ -9255,7 +9255,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
   # Step 3, Match markers (PRO terms) to cell types in CL/pCL
   # Get wikidata link for each cell type
   return_cell_types_2 <- shiny::eventReactive(input$submit_tab2_step3, {
-
+   browser()
     # Load in data from Step 3
     input_reformatted <- reformatted_data_2()
 
