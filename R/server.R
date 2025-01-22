@@ -244,7 +244,7 @@ server_app <- function(input, output, session) {
 
   # Step 1, read in uploaded file
   uploaded_file <- shiny::eventReactive(input$submit_tab1_step1,{
-browser()
+
     if (is.null(check_input_file_1()) == TRUE) {
 
       file_input <- input$upload_expression_csv
@@ -567,7 +567,7 @@ browser()
 
   # Step 2, Median Difference Equation
   raw_marker_diff_eq_results <- shiny::eventReactive(input$submit_tab1_step2,{
-   browser()
+ 
     marker_lookup <- df_expr$data
 
     org_df <- uploaded_file()
