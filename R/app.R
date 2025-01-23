@@ -17,8 +17,10 @@ library(shiny)
 source("./R/ui.R")
 source("./R/server.R")
 
-shinyApp(
-  ui = ui_app,
-  server = server_app,
-  options = list(launch.browser = TRUE)
-)
+#shinyApp(
+#  ui = ui_app,
+#  server = server_app,
+#  options = list(launch.browser = TRUE)
+#)
+
+runApp(list(ui = ui_app, server = server_app), launch.browser = .rs.invokeShinyWindowExternal)
