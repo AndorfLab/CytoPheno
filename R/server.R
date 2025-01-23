@@ -1017,13 +1017,6 @@ server_app <- function(input, output, session) {
 
     density_plots <- expr_density()
 
-    # density_plots <- ggplot2::ggplot() +
-    #   ggridges::geom_density_ridges(data = ggd_plot, ggplot2::aes(x = Expression, y = Cluster,
-    #                                            color = `All cells`, fill = `All cells`), alpha = 0.3) +
-    #   ggplot2::scale_fill_manual(values = c("#762A83", "#1B7837")) +
-    #   ggplot2::scale_color_manual(values = c("#762A83", "#1B7837"))
-    #
-    #
     density_plots <- density_plots +
       ggplot2::scale_x_continuous(breaks = integer_breaks(n = 4)) +
       ggplot2::facet_wrap( ~ antigen, scales = "free_x", nrow = input$density_facet) +
@@ -1046,14 +1039,18 @@ server_app <- function(input, output, session) {
 
     kept_markers <- new_names_expression()
 
-
     expr <- subset(kept_markers, select=-cluster)
+    cell_clustering <- kept_markers$cluster
+    
+    # Calculate the median expression
+    expr_median <- data.frame(expr, cell_clustering = cell_clustering) %>%
+      group_by(cell_clustering) %>% summarize_all(funs(median))
+    
+    expr <- subset(expr_median, select = -cell_clustering)
 
     max_med <- apply(expr, 2, max, na.rm=TRUE)
 
-
     max_med <- t(as.data.frame(max_med))
-
 
     return(max_med)
   })
@@ -1081,7 +1078,14 @@ server_app <- function(input, output, session) {
     kept_markers <- new_names_expression()
 
     expr <- subset(kept_markers, select=-cluster)
-
+    cell_clustering <- kept_markers$cluster
+    
+    # Calculate the median expression
+    expr_median <- data.frame(expr, cell_clustering = cell_clustering) %>%
+      group_by(cell_clustering) %>% summarize_all(funs(median))
+    
+    expr <- subset(expr_median, select = -cell_clustering)
+    
     min_med <- apply(expr, 2, min, na.rm=TRUE)
 
     min_med <- t(as.data.frame(min_med))
