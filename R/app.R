@@ -13,12 +13,12 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 
-
 library(shiny)
 source("./R/ui.R")
 source("./R/server.R")
 
 shinyApp(
   ui = ui_app,
-  server = server_app
+  server = server_app,
+  options = list(launch.browser = TRUE)
 )
