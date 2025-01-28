@@ -1044,7 +1044,7 @@ server_app <- function(input, output, session) {
     
     # Calculate the median expression
     expr_median <- data.frame(expr, cell_clustering = cell_clustering) %>%
-      dplyr::group_by(cell_clustering) %>% dplyr::summarize_all(dplyr::funs(median))
+      dplyr::group_by(cell_clustering) %>% dplyr::summarize_all(dplyr::funs(stats::median))
     
     expr <- subset(expr_median, select = -cell_clustering)
 
@@ -1082,7 +1082,7 @@ server_app <- function(input, output, session) {
     
     # Calculate the median expression
     expr_median <- data.frame(expr, cell_clustering = cell_clustering) %>%
-      dplyr::group_by(cell_clustering) %>% dplyr::summarize_all(dplyr::funs(median))
+      dplyr::group_by(cell_clustering) %>% dplyr::summarize_all(dplyr::funs(stats::median))
     
     expr <- subset(expr_median, select = -cell_clustering)
     
