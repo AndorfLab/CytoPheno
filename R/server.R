@@ -8600,9 +8600,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Remove protein identifier
     df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/PR_000000001", ]
 
-    # Remove heterochromatin
-    df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/GO_0000792", ]
-
     # Only keep first 2 columns
     df <- df[ , c("Related_protein","Protein_name")]
 
@@ -10643,12 +10640,19 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             }
           }
 
+         browser()
           # Remove proteins that didn't get a match in a particular cluster
           df_all_pro <- df_all_pro[df_all_pro$Relationship_type != "", ]
 
           # Remove any duplicate rows
           df_all_pro <- df_all_pro[!duplicated(df_all_pro),]
 
+           # Remove protein id
+           df_all_pro <- df_all_pro[!df_all_pro$CL_term == "http://purl.obolibrary.org/obo/PR_000000001", ]
+ 
+           # Remove heterochromatin
+           df_all_pro <- df_all_pro[!df_all_pro$CL_term == "http://purl.obolibrary.org/obo/GO_0000792", ]
+ 
           # If protein as listed as having 2 different relationship types
           df_all_pro <- df_all_pro %>%
             dplyr::group_by(CL_term, Protein_name) %>%
