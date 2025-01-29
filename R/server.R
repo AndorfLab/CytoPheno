@@ -8600,6 +8600,9 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Remove protein identifier
     df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/PR_000000001", ]
 
+    # Remove heterochromatin
+    df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/GO_0000792", ]
+
     # Only keep first 2 columns
     df <- df[ , c("Related_protein","Protein_name")]
 
@@ -10163,7 +10166,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             full_filter <-
               paste(specific_marker$Marker_query, collapse = "||")
 
-
             if (length(input$ontology_type_2) == 1) {
               if (input$ontology_type_2 == 'internal_CL_2') {
                 ontology_URI <- "<http://purl.obolibrary.org/obo/merged/CL>"
@@ -10218,8 +10220,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     ?Class_of owl:someValuesFrom ?Related_protein .
     ?Related_protein rdfs:label ?Protein_name
   }
-
-
 
   FILTER(",
                   full_filter_1,
@@ -10433,7 +10433,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               df <- rbind(df1, df2)
             }
 
-
             # Put the results in a list of data frames
             if (length(df) != 0) {
               # Add back in < and >
@@ -10522,7 +10521,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                    all_cluster_matches$Relationship_type,
                    ")")
 
-
           # Sort, put into final format for export
           final_matched_output <- all_cluster_matches %>%
             dplyr::group_by(Cluster,
@@ -10534,7 +10532,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               `num of inputs that match to cell type` =  dplyr::n()
             ) %>%
             dplyr::arrange(Cluster, dplyr::desc(`num of inputs that match to cell type`))
-
 
           unq_cell_types <- final_matched_output[!duplicated(final_matched_output[,"CL_term"]),]
 
@@ -10623,7 +10620,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Make sure they all have these columns
             three_cols <- c("CL_term", "Relationship_type", "Protein_name")
             df_all_pro_part[three_cols[!(three_cols %in% colnames(df_all_pro_part))]] <- NA
-
 
             df_all_pro <- rbind(df_all_pro, df_all_pro_part)
           }
@@ -10803,8 +10799,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                        'TCR \\(HIGH, POSITIVE\\)', 'TCRAB \\(HIGH, POSITIVE\\)', 'TCRA \\(HIGH, POSITIVE\\)', 'TCRB \\(HIGH, POSITIVE\\)', 'TCRGD \\(HIGH, POSITIVE\\)', 'TCRG \\(HIGH, POSITIVE\\)', 'TCRD \\(HIGH, POSITIVE\\)', 'CD3E \\(HIGH, POSITIVE\\)', 'CD3 \\(HIGH, POSITIVE\\)',
                        'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)', 'CD3 \\(POSITIVE, HIGH\\)',
                        'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
-
-
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full marker description`), paste(TCR_pos, collapse='|')))
 
