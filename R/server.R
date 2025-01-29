@@ -10777,7 +10777,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                   by = c("CL_term","Cluster"), all.x = TRUE)
 
           final_matched_output3$`num contradiction(s)`[is.na(final_matched_output3$`num contradiction(s)`)] <- 0
-
+browser()
           # Count how many markers are positive and negative
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_pos_input = stringr::str_count(`Full input marker description`, '\\(Positive\\)|\\(High\\)|\\(Low\\)|\\(Low, Positive\\)|\\(High, Positive\\)|\\(Positive, Low\\)|\\(Positive, High\\)|\\(Low, High\\)|\\(High, Low\\)'))
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_neg_input = stringr::str_count(`Full input marker description`, '(Negative)'))
