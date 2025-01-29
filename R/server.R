@@ -5580,12 +5580,12 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               Relationship_type = paste(Relationship_type, collapse = ", ")
             )
 
-
-
           # Remove protein identifier
           df_all_pro <- df_all_pro[!df_all_pro$Protein_name == "protein", ]
 
-
+          # Remove heterochromatin
+           df_all_pro <- df_all_pro[!df_all_pro$Protein_name == "heterochromatin", ]
+      
           df_all_pro$x <-
             paste0(df_all_pro$Protein_name,
                    " (",
@@ -10647,8 +10647,12 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           # Remove any duplicate rows
           df_all_pro <- df_all_pro[!duplicated(df_all_pro),]
 
-           # Remove heterochromatin
+          # Remove protein identifier
+          df_all_pro <- df_all_pro[!df_all_pro$Protein_name == "protein", ]
+
+          # Remove heterochromatin
            df_all_pro <- df_all_pro[!df_all_pro$Protein_name == "heterochromatin", ]
+      
  
           # If protein as listed as having 2 different relationship types
           df_all_pro <- df_all_pro %>%
@@ -10776,8 +10780,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           final_matched_output3$`num contradiction(s)`[is.na(final_matched_output3$`num contradiction(s)`)] <- 0
 
           # Count how many markers are positive and negative
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_pos_input = stringr::str_count(`Full marker description`, '\\(Positive\\)|\\(High\\)|\\(Low\\)|\\(Low, Positive\\)|\\(High, Positive\\)|\\(Positive, Low\\)|\\(Positive, High\\)|\\(Low, High\\)|\\(High, Low\\)'))
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_neg_input = stringr::str_count(`Full marker description`, '(Negative)'))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_pos_input = stringr::str_count(`Full input marker description`, '\\(Positive\\)|\\(High\\)|\\(Low\\)|\\(Low, Positive\\)|\\(High, Positive\\)|\\(Positive, Low\\)|\\(Positive, High\\)|\\(Low, High\\)|\\(High, Low\\)'))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_neg_input = stringr::str_count(`Full input marker description`, '(Negative)'))
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_pos_cell_type = stringr::str_count(`Full marker description`, '\\(Positive\\)|\\(High\\)|\\(Low\\)|\\(Low, Positive\\)|\\(High, Positive\\)|\\(Positive, Low\\)|\\(Positive, High\\)|\\(Low, High\\)|\\(High, Low\\)'))
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_neg_cell_type = stringr::str_count(`Full marker description`, '(Negative)'))
