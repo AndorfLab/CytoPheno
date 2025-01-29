@@ -537,7 +537,7 @@ ui_app <- function(req){
                                                                                                "num_top_matches_1",
                                                                                                label = "Return top N matches per cluster (including ties)",
                                                                                                min = 1,
-                                                                                               max = 5,
+                                                                                               max = 10,
                                                                                                value = 3
                                                                                              ),
 
@@ -1024,7 +1024,7 @@ ui_app <- function(req){
                                                                                                "num_top_matches_2",
                                                                                                label = "Return top N matches per cluster (including ties)",
                                                                                                min = 1,
-                                                                                               max = 5,
+                                                                                               max = 10,
                                                                                                value = 3
                                                                                              ),
 
