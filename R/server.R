@@ -5782,7 +5782,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(TCR_negs, collapse='|')))
 
-          final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg_pos == 1] <- 0
+          final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 1] <- 0
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 2] <- 1
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 3] <- 2
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 4] <- 3
@@ -5900,7 +5900,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(CD8_negs, collapse='|')))
 
-          final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg_pos == 1] <- 0
+          final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 1] <- 0
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 2] <- 1
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 3] <- 2
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 4] <- 3
@@ -10777,7 +10777,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                   by = c("CL_term","Cluster"), all.x = TRUE)
 
           final_matched_output3$`num contradiction(s)`[is.na(final_matched_output3$`num contradiction(s)`)] <- 0
-browser()
+
           # Count how many markers are positive and negative
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_pos_input = stringr::str_count(`Full input marker description`, '\\(Positive\\)|\\(High\\)|\\(Low\\)|\\(Low, Positive\\)|\\(High, Positive\\)|\\(Positive, Low\\)|\\(Positive, High\\)|\\(Low, High\\)|\\(High, Low\\)'))
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(Num_neg_input = stringr::str_count(`Full input marker description`, '(Negative)'))
@@ -10853,7 +10853,7 @@ browser()
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(TCR_negs, collapse='|')))
 
-          final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg_pos == 1] <- 0
+          final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 1] <- 0
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 2] <- 1
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 3] <- 2
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 4] <- 3
@@ -10971,7 +10971,7 @@ browser()
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(CD8_negs, collapse='|')))
 
-          final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg_pos == 1] <- 0
+          final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 1] <- 0
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 2] <- 1
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 3] <- 2
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 4] <- 3
