@@ -5733,7 +5733,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                        'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)', 'CD3 \\(POSITIVE, HIGH\\)',
                        'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full marker description`), paste(TCR_pos, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full input marker description`), paste(TCR_pos, collapse='|')))
 
           final_matched_output3$TCR_input_pos[final_matched_output3$TCR_input_pos == 1] <- 0
           final_matched_output3$TCR_input_pos[final_matched_output3$TCR_input_pos == 2] <- 1
@@ -5780,7 +5780,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)', 'CD3 \\(NEGATIVE\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full marker description`), paste(TCR_negs, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(TCR_negs, collapse='|')))
 
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg_pos == 1] <- 0
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 2] <- 1
@@ -5852,7 +5852,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                        'CD8A \\(POSITIVE, HIGH\\)', 'CD8ALPHABETA \\(POSITIVE, HIGH\\)',
                        'CD8A \\(HIGH, LOW\\)', 'CD8ALPHABETA \\(HIGH, LOW\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_pos = stringr::str_count(toupper(`Full marker description`), paste(CD8_pos, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_pos = stringr::str_count(toupper(`Full input marker description`), paste(CD8_pos, collapse='|')))
 
           final_matched_output3$CD8_input_pos[final_matched_output3$CD8_input_pos == 1] <- 0
           final_matched_output3$CD8_input_pos[final_matched_output3$CD8_input_pos == 2] <- 1
@@ -5898,7 +5898,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           CD8_negs <- c('CD8A \\(NEGATIVE\\)', 'CD8ALPHABETA \\(NEGATIVE\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full marker description`), paste(CD8_negs, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(CD8_negs, collapse='|')))
 
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg_pos == 1] <- 0
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 2] <- 1
@@ -10640,7 +10640,6 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             }
           }
 
-         browser()
           # Remove proteins that didn't get a match in a particular cluster
           df_all_pro <- df_all_pro[df_all_pro$Relationship_type != "", ]
 
@@ -10805,7 +10804,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                        'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)', 'CD3 \\(POSITIVE, HIGH\\)',
                        'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full marker description`), paste(TCR_pos, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full input marker description`), paste(TCR_pos, collapse='|')))
 
           final_matched_output3$TCR_input_pos[final_matched_output3$TCR_input_pos == 1] <- 0
           final_matched_output3$TCR_input_pos[final_matched_output3$TCR_input_pos == 2] <- 1
@@ -10852,7 +10851,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)', 'CD3 \\(NEGATIVE\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full marker description`), paste(TCR_negs, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(TCR_negs, collapse='|')))
 
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg_pos == 1] <- 0
           final_matched_output3$TCR_input_neg[final_matched_output3$TCR_input_neg == 2] <- 1
@@ -10924,7 +10923,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
                        'CD8A \\(POSITIVE, HIGH\\)', 'CD8ALPHABETA \\(POSITIVE, HIGH\\)',
                        'CD8A \\(HIGH, LOW\\)', 'CD8ALPHABETA \\(HIGH, LOW\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_pos = stringr::str_count(toupper(`Full marker description`), paste(CD8_pos, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_pos = stringr::str_count(toupper(`Full input marker description`), paste(CD8_pos, collapse='|')))
 
           final_matched_output3$CD8_input_pos[final_matched_output3$CD8_input_pos == 1] <- 0
           final_matched_output3$CD8_input_pos[final_matched_output3$CD8_input_pos == 2] <- 1
@@ -10970,7 +10969,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           CD8_negs <- c('CD8A \\(NEGATIVE\\)', 'CD8ALPHABETA \\(NEGATIVE\\)')
 
-          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full marker description`), paste(CD8_negs, collapse='|')))
+          final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(CD8_input_neg = stringr::str_count(toupper(`Full input marker description`), paste(CD8_negs, collapse='|')))
 
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg_pos == 1] <- 0
           final_matched_output3$CD8_input_neg[final_matched_output3$CD8_input_neg == 2] <- 1
