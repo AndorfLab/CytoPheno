@@ -5723,15 +5723,15 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           # TCR
 
           # Positive
-          TCR_pos <- c('TCR \\(POSITIVE\\)', 'TCRAB \\(POSITIVE\\)', 'TCRA \\(POSITIVE\\)', 'TCRB \\(POSITIVE\\)', 'TCRGD \\(POSITIVE\\)', 'TCRG \\(POSITIVE\\)', 'TCRD \\(POSITIVE\\)', 'CD3E \\(POSITIVE\\)',
-                       'TCR \\(HIGH\\)', 'TCRAB \\(HIGH\\)', 'TCRA \\(HIGH\\)', 'TCRB \\(HIGH\\)', 'TCRGD \\(HIGH\\)', 'TCRG \\(HIGH\\)', 'TCRD \\(HIGH\\)', 'CD3E \\(HIGH\\)',
-                       'TCR \\(LOW\\)', 'TCRAB \\(LOW\\)', 'TCRA \\(LOW\\)', 'TCRB \\(LOW\\)', 'TCRGD \\(LOW\\)', 'TCRG \\(LOW\\)', 'TCRD \\(LOW\\)', 'CD3E \\(LOW\\)',
-                       'TCR \\(LOW, POSITIVE\\)', 'TCRAB \\(LOW, POSITIVE\\)', 'TCRA \\(LOW, POSITIVE\\)', 'TCRB \\(LOW, POSITIVE\\)', 'TCRGD \\(LOW, POSITIVE\\)', 'TCRG \\(LOW, POSITIVE\\)', 'TCRD \\(LOW, POSITIVE\\)', 'CD3E \\(LOW, POSITIVE\\)',
-                       'TCR \\(POSITIVE, LOW\\)', 'TCRAB \\(POSITIVE, LOW\\)', 'TCRA \\(POSITIVE, LOW\\)', 'TCRB \\(POSITIVE, LOW\\)', 'TCRGD \\(POSITIVE, LOW\\)', 'TCRG \\(POSITIVE, LOW\\)', 'TCRD \\(POSITIVE, LOW\\)', 'CD3E \\(POSITIVE, LOW\\)',
-                       'TCR \\(LOW, HIGH\\)', 'TCRAB \\(LOW, HIGH\\)', 'TCRA \\(LOW, HIGH\\)', 'TCRB \\(LOW, HIGH\\)', 'TCRGD \\(LOW, HIGH\\)', 'TCRG \\(LOW, HIGH\\)', 'TCRD \\(LOW, HIGH\\)', 'CD3E \\(LOW, HIGH\\)',
-                       'TCR \\(HIGH, POSITIVE\\)', 'TCRAB \\(HIGH, POSITIVE\\)', 'TCRA \\(HIGH, POSITIVE\\)', 'TCRB \\(HIGH, POSITIVE\\)', 'TCRGD \\(HIGH, POSITIVE\\)', 'TCRG \\(HIGH, POSITIVE\\)', 'TCRD \\(HIGH, POSITIVE\\)', 'CD3E \\(HIGH, POSITIVE\\)',
-                       'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)',
-                       'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
+          TCR_pos <- c('TCR \\(POSITIVE\\)', 'TCRAB \\(POSITIVE\\)', 'TCRA \\(POSITIVE\\)', 'TCRB \\(POSITIVE\\)', 'TCRGD \\(POSITIVE\\)', 'TCRG \\(POSITIVE\\)', 'TCRD \\(POSITIVE\\)', 'CD3E \\(POSITIVE\\)', 'CD3 \\(POSITIVE\\)',
+                       'TCR \\(HIGH\\)', 'TCRAB \\(HIGH\\)', 'TCRA \\(HIGH\\)', 'TCRB \\(HIGH\\)', 'TCRGD \\(HIGH\\)', 'TCRG \\(HIGH\\)', 'TCRD \\(HIGH\\)', 'CD3E \\(HIGH\\)', 'CD3 \\(HIGH\\)',
+                       'TCR \\(LOW\\)', 'TCRAB \\(LOW\\)', 'TCRA \\(LOW\\)', 'TCRB \\(LOW\\)', 'TCRGD \\(LOW\\)', 'TCRG \\(LOW\\)', 'TCRD \\(LOW\\)', 'CD3E \\(LOW\\)', 'CD3 \\(LOW\\)',
+                       'TCR \\(LOW, POSITIVE\\)', 'TCRAB \\(LOW, POSITIVE\\)', 'TCRA \\(LOW, POSITIVE\\)', 'TCRB \\(LOW, POSITIVE\\)', 'TCRGD \\(LOW, POSITIVE\\)', 'TCRG \\(LOW, POSITIVE\\)', 'TCRD \\(LOW, POSITIVE\\)', 'CD3E \\(LOW, POSITIVE\\)', 'CD3 \\(LOW, POSITIVE\\)',
+                       'TCR \\(POSITIVE, LOW\\)', 'TCRAB \\(POSITIVE, LOW\\)', 'TCRA \\(POSITIVE, LOW\\)', 'TCRB \\(POSITIVE, LOW\\)', 'TCRGD \\(POSITIVE, LOW\\)', 'TCRG \\(POSITIVE, LOW\\)', 'TCRD \\(POSITIVE, LOW\\)', 'CD3E \\(POSITIVE, LOW\\)', 'CD3 \\(POSITIVE, LOW\\)',
+                       'TCR \\(LOW, HIGH\\)', 'TCRAB \\(LOW, HIGH\\)', 'TCRA \\(LOW, HIGH\\)', 'TCRB \\(LOW, HIGH\\)', 'TCRGD \\(LOW, HIGH\\)', 'TCRG \\(LOW, HIGH\\)', 'TCRD \\(LOW, HIGH\\)', 'CD3E \\(LOW, HIGH\\)', 'CD3 \\(LOW, HIGH\\)',
+                       'TCR \\(HIGH, POSITIVE\\)', 'TCRAB \\(HIGH, POSITIVE\\)', 'TCRA \\(HIGH, POSITIVE\\)', 'TCRB \\(HIGH, POSITIVE\\)', 'TCRGD \\(HIGH, POSITIVE\\)', 'TCRG \\(HIGH, POSITIVE\\)', 'TCRD \\(HIGH, POSITIVE\\)', 'CD3E \\(HIGH, POSITIVE\\)', 'CD3 \\(HIGH, POSITIVE\\)',
+                       'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)', 'CD3 \\(POSITIVE, HIGH\\)',
+                       'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full marker description`), paste(TCR_pos, collapse='|')))
 
@@ -5778,7 +5778,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           # Negative
 
-          TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)')
+          TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)', 'CD3 \\(NEGATIVE\\)')
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full marker description`), paste(TCR_negs, collapse='|')))
 
@@ -10794,15 +10794,17 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           # TCR
 
           # Positive
-          TCR_pos <- c('TCR \\(POSITIVE\\)', 'TCRAB \\(POSITIVE\\)', 'TCRA \\(POSITIVE\\)', 'TCRB \\(POSITIVE\\)', 'TCRGD \\(POSITIVE\\)', 'TCRG \\(POSITIVE\\)', 'TCRD \\(POSITIVE\\)', 'CD3E \\(POSITIVE\\)',
-                       'TCR \\(HIGH\\)', 'TCRAB \\(HIGH\\)', 'TCRA \\(HIGH\\)', 'TCRB \\(HIGH\\)', 'TCRGD \\(HIGH\\)', 'TCRG \\(HIGH\\)', 'TCRD \\(HIGH\\)', 'CD3E \\(HIGH\\)',
-                       'TCR \\(LOW\\)', 'TCRAB \\(LOW\\)', 'TCRA \\(LOW\\)', 'TCRB \\(LOW\\)', 'TCRGD \\(LOW\\)', 'TCRG \\(LOW\\)', 'TCRD \\(LOW\\)', 'CD3E \\(LOW\\)',
-                       'TCR \\(LOW, POSITIVE\\)', 'TCRAB \\(LOW, POSITIVE\\)', 'TCRA \\(LOW, POSITIVE\\)', 'TCRB \\(LOW, POSITIVE\\)', 'TCRGD \\(LOW, POSITIVE\\)', 'TCRG \\(LOW, POSITIVE\\)', 'TCRD \\(LOW, POSITIVE\\)', 'CD3E \\(LOW, POSITIVE\\)',
-                       'TCR \\(POSITIVE, LOW\\)', 'TCRAB \\(POSITIVE, LOW\\)', 'TCRA \\(POSITIVE, LOW\\)', 'TCRB \\(POSITIVE, LOW\\)', 'TCRGD \\(POSITIVE, LOW\\)', 'TCRG \\(POSITIVE, LOW\\)', 'TCRD \\(POSITIVE, LOW\\)', 'CD3E \\(POSITIVE, LOW\\)',
-                       'TCR \\(LOW, HIGH\\)', 'TCRAB \\(LOW, HIGH\\)', 'TCRA \\(LOW, HIGH\\)', 'TCRB \\(LOW, HIGH\\)', 'TCRGD \\(LOW, HIGH\\)', 'TCRG \\(LOW, HIGH\\)', 'TCRD \\(LOW, HIGH\\)', 'CD3E \\(LOW, HIGH\\)',
-                       'TCR \\(HIGH, POSITIVE\\)', 'TCRAB \\(HIGH, POSITIVE\\)', 'TCRA \\(HIGH, POSITIVE\\)', 'TCRB \\(HIGH, POSITIVE\\)', 'TCRGD \\(HIGH, POSITIVE\\)', 'TCRG \\(HIGH, POSITIVE\\)', 'TCRD \\(HIGH, POSITIVE\\)', 'CD3E \\(HIGH, POSITIVE\\)',
-                       'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)',
-                       'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
+         TCR_pos <- c('TCR \\(POSITIVE\\)', 'TCRAB \\(POSITIVE\\)', 'TCRA \\(POSITIVE\\)', 'TCRB \\(POSITIVE\\)', 'TCRGD \\(POSITIVE\\)', 'TCRG \\(POSITIVE\\)', 'TCRD \\(POSITIVE\\)', 'CD3E \\(POSITIVE\\)', 'CD3 \\(POSITIVE\\)',
+                       'TCR \\(HIGH\\)', 'TCRAB \\(HIGH\\)', 'TCRA \\(HIGH\\)', 'TCRB \\(HIGH\\)', 'TCRGD \\(HIGH\\)', 'TCRG \\(HIGH\\)', 'TCRD \\(HIGH\\)', 'CD3E \\(HIGH\\)', 'CD3 \\(HIGH\\)',
+                       'TCR \\(LOW\\)', 'TCRAB \\(LOW\\)', 'TCRA \\(LOW\\)', 'TCRB \\(LOW\\)', 'TCRGD \\(LOW\\)', 'TCRG \\(LOW\\)', 'TCRD \\(LOW\\)', 'CD3E \\(LOW\\)', 'CD3 \\(LOW\\)',
+                       'TCR \\(LOW, POSITIVE\\)', 'TCRAB \\(LOW, POSITIVE\\)', 'TCRA \\(LOW, POSITIVE\\)', 'TCRB \\(LOW, POSITIVE\\)', 'TCRGD \\(LOW, POSITIVE\\)', 'TCRG \\(LOW, POSITIVE\\)', 'TCRD \\(LOW, POSITIVE\\)', 'CD3E \\(LOW, POSITIVE\\)', 'CD3 \\(LOW, POSITIVE\\)',
+                       'TCR \\(POSITIVE, LOW\\)', 'TCRAB \\(POSITIVE, LOW\\)', 'TCRA \\(POSITIVE, LOW\\)', 'TCRB \\(POSITIVE, LOW\\)', 'TCRGD \\(POSITIVE, LOW\\)', 'TCRG \\(POSITIVE, LOW\\)', 'TCRD \\(POSITIVE, LOW\\)', 'CD3E \\(POSITIVE, LOW\\)', 'CD3 \\(POSITIVE, LOW\\)',
+                       'TCR \\(LOW, HIGH\\)', 'TCRAB \\(LOW, HIGH\\)', 'TCRA \\(LOW, HIGH\\)', 'TCRB \\(LOW, HIGH\\)', 'TCRGD \\(LOW, HIGH\\)', 'TCRG \\(LOW, HIGH\\)', 'TCRD \\(LOW, HIGH\\)', 'CD3E \\(LOW, HIGH\\)', 'CD3 \\(LOW, HIGH\\)',
+                       'TCR \\(HIGH, POSITIVE\\)', 'TCRAB \\(HIGH, POSITIVE\\)', 'TCRA \\(HIGH, POSITIVE\\)', 'TCRB \\(HIGH, POSITIVE\\)', 'TCRGD \\(HIGH, POSITIVE\\)', 'TCRG \\(HIGH, POSITIVE\\)', 'TCRD \\(HIGH, POSITIVE\\)', 'CD3E \\(HIGH, POSITIVE\\)', 'CD3 \\(HIGH, POSITIVE\\)',
+                       'TCR \\(POSITIVE, HIGH\\)', 'TCRAB \\(POSITIVE, HIGH\\)', 'TCRA \\(POSITIVE, HIGH\\)', 'TCRB \\(POSITIVE, HIGH\\)', 'TCRGD \\(POSITIVE, HIGH\\)', 'TCRG \\(POSITIVE, HIGH\\)', 'TCRD \\(POSITIVE, HIGH\\)', 'CD3E \\(POSITIVE, HIGH\\)', 'CD3 \\(POSITIVE, HIGH\\)',
+                       'TCR \\(HIGH, LOW\\)', 'TCRAB \\(HIGH, LOW\\)', 'TCRA \\(HIGH, LOW\\)', 'TCRB \\(HIGH, LOW\\)', 'TCRGD \\(HIGH, LOW\\)', 'TCRG \\(HIGH, LOW\\)', 'TCRD \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)', 'CD3E \\(HIGH, LOW\\)')
+
+
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_pos = stringr::str_count(toupper(`Full marker description`), paste(TCR_pos, collapse='|')))
 
@@ -10849,7 +10851,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           # Negative
 
-          TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)')
+          TCR_negs <- c('TCR \\(NEGATIVE\\)', 'TCRAB \\(NEGATIVE\\)', 'TCRA \\(NEGATIVE\\)', 'TCRB \\(NEGATIVE\\)', 'TCRGD \\(NEGATIVE\\)', 'TCRG \\(NEGATIVE\\)', 'TCRD \\(NEGATIVE\\)', 'CD3E \\(NEGATIVE\\)', 'CD3 \\(NEGATIVE\\)')
 
           final_matched_output3 <- final_matched_output3 %>% dplyr::mutate(TCR_input_neg = stringr::str_count(toupper(`Full marker description`), paste(TCR_negs, collapse='|')))
 
