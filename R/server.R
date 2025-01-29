@@ -10647,11 +10647,8 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           # Remove any duplicate rows
           df_all_pro <- df_all_pro[!duplicated(df_all_pro),]
 
-           # Remove protein id
-           df_all_pro <- df_all_pro[!df_all_pro$CL_term == "http://purl.obolibrary.org/obo/PR_000000001", ]
- 
            # Remove heterochromatin
-           df_all_pro <- df_all_pro[!df_all_pro$CL_term == "http://purl.obolibrary.org/obo/GO_0000792", ]
+           df_all_pro <- df_all_pro[!df_all_pro$Protein_name == "heterochromatin", ]
  
           # If protein as listed as having 2 different relationship types
           df_all_pro <- df_all_pro %>%
