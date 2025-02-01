@@ -17,6 +17,7 @@ library(shiny)
 source("./R/ui.R")
 source("./R/server.R")
 
-#shinyApp(
+shinyApp(
   ui = ui_app,
-  server = server_app)
+  server = server_app,
+  options = list(launch.browser = TRUE))
