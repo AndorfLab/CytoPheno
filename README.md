@@ -1,5 +1,6 @@
 
-# ${{\color{#980DC9}\Huge{\textsf{CytoPheno: Descriptive Cell Type Naming Application}}}}\$ 
+# ${{\color{#980DC9}\Huge{\textsf{CytoPheno}}}}\$ 
+# ${{\color{#980DC9}\Huge{\textsf{Descriptive Cell Type Naming Application}}}}\$ 
 
 # Overview
 The full application takes post-clustering flow or mass cytometry expression data as the input, returns marker definitions per cluster (Part 1), standardizes marker names (Part 2), and finally matches to cell type names (Part 3). 
