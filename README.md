@@ -2,7 +2,9 @@
 # ${{\color{#980DC9}\Huge{\textsf{CytoPheno}}}}\$ 
 
 # Overview
-The full application takes post-clustering flow or mass cytometry expression data as the input, returns marker definitions per cluster (Part 1), standardizes marker names (Part 2), and finally matches to cell type names (Part 3). 
+This is a R Shiny application that intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
+
+Specifically, the full application takes post-clustering flow or mass cytometry expression data as the input, returns marker definitions per cluster (Part 1), standardizes marker names (Part 2), and finally matches to cell type names (Part 3). 
 
 ![Figure 1](https://github.com/user-attachments/assets/fd6ec134-f358-43cd-b891-cce9790c5bf2)
 
