@@ -1,4 +1,4 @@
-hello
+
 # ${{\color{#980DC9}\Huge{\textsf{Descriptive Cell Type Naming Application}}}}\$ 
 
 # Overview
