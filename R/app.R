@@ -1,6 +1,6 @@
 # Run Shiny app
 #
-# Cell.Naming: Intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
+# CytoPheno: Intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
 # Copyright (C) 2025 Amanda Tursi
 #
 # This program is free software: you can redistribute it and/or modify
