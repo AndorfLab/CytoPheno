@@ -33,7 +33,7 @@
 #' @return server
 #'
 
-# Cell.Naming: Intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
+# CytoPheno: Intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
 # Copyright (C) 2025 Amanda Tursi
 #
 # This program is free software: you can redistribute it and/or modify
@@ -55,13 +55,13 @@ options(shiny.maxRequestSize = 60*1024^2)
 
 server_app <- function(input, output, session) {
  
- url1 <-"https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Kimmey_5hr_stim.csv"
+ url1 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Kimmey_5hr_stim.csv"
  Kimmey_5hr_stim <- read.csv(url1, header = TRUE)  
 
- url2 <-"https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Dusoswa_OMIP_54_markers.csv"
+ url2 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Dusoswa_OMIP_54_markers.csv"
  Dusoswa_OMIP_54_markers <- read.csv(url2, header = TRUE) 
 
- url3 <- "https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Lee_AML_cell_types_markers.csv"
+ url3 <- "https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Lee_AML_cell_types_markers.csv"
  Lee_AML_cell_types_markers <- read.csv(url3, header = TRUE) 
  
   #################################################################
@@ -124,7 +124,7 @@ server_app <- function(input, output, session) {
       For example, if 40 markers were used to define 50,000 cells, the file should contain expression values for 50,000 rows and 41 columns (40 markers + the cluster column).
       <br>
       <br>"),
-      tags$div("An example expression input file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example expression input file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -393,7 +393,7 @@ server_app <- function(input, output, session) {
       <li>Delete Markers: Select the row containing the marker(s) to delete. Multiple rows can be selected at once. Once the desired markers are highlighted, click 'Delete Marker(s)' at the bottom. Note: Deleting markers is irreversible unless you reset the tool via the sidebar.</li>
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1176,7 +1176,7 @@ server_app <- function(input, output, session) {
       The dimensions and label sizes of the plots can be adjusted via slider bars at the bottom. Heatmaps are interactive ??? hovering over any section reveals the row, column, and value, and users can zoom in on specific areas. These plots can also be downloaded as PNG files using the camera icon. Density plots are not interactive, but users can right-click to copy or save them.
       <br>
       <br>"),
-      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1221,7 +1221,7 @@ server_app <- function(input, output, session) {
       <br>
       </ul>
       </ul>"),
-      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1428,7 +1428,7 @@ server_app <- function(input, output, session) {
       A 'Download' button at the bottom of the page allows users to export the results as a ZIP file containing multiple CSVs. These files reflect the current editable data frame, so any changes will be immediately reflected in the CSV exports.
       <br>
       <br>"),
-      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("The Median Difference Equation and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -1679,7 +1679,7 @@ server_app <- function(input, output, session) {
       <br>
       <br>
      "),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.2.-Input-Expression-Data-and-Uploaded-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.2.-Input-Expression-Data-and-Uploaded-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -2448,7 +2448,7 @@ server_app <- function(input, output, session) {
       A data frame is displayed, showing the original marker names and any suggested names. The last column, 'Type New Marker Name', is editable, allowing users to propose new names. These new names will be reprocessed to check for matches within the multistep workflow.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -2566,26 +2566,26 @@ server_app <- function(input, output, session) {
       wikidata_taxon_ID <- df$item
 
       # List of specific protein suggestions
-      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
+      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
       # List of GO complexes that are included in CL definitions
-      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
+      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
       ## List of CD synonym (adapted from list published by HCDM)
-      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
+      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
       # Auto replacements
-      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
+      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
       ## Lists of non-specific suggestions
       # List of non-protein words that were found in markers from the deveolpment data
-      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
+      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
 
       # List of metal tags that were found in the development data
-      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
+      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
 
       # List of fluorophores tags that were  found in the development data
-      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
+      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
 
       # Make markers uppercase and remove dashes, underscores, periods, and spaces
       new_df$Marker2 <- toupper(new_df$Marker)
@@ -3353,13 +3353,13 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     wikidata_taxon_ID <- df$item
 
     # List of specific protein suggestions
-    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
+    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
     # List of GO complexes that are included in CL definitions
-    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
+    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
     ## List of CD synonym (adapted from list published by HCDM)
-    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
+    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
     # Make markers uppercase and remove dashes, underscores, periods, and spaces
     new_df$Marker2 <- toupper(new_df$`Type new marker name`)
@@ -3386,7 +3386,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
     # Auto replacements
-    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
+    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
             # If TCR is also specified in the panel, don't auto match CD3E to it
     if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
@@ -4059,7 +4059,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       Users can download the matched terms in CSV format using the 'Download' button.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6222,7 +6222,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       The 'Download' button at the bottom allows users to export a CSV file containing all relevant data, including additional columns detailing the number of markers in the input, CL cell types, matches, and contradictions.
       <br>
       <br>"),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/3.1.-Input-Expression-Data-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6313,7 +6313,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       </ul>
       </ul>
        <br>"),
-      tags$div(" An example marker definition file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div(" An example marker definition file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6336,7 +6336,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       <br>
       </ul>
       </ul>"),
-      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/2.-Example-Data', "GitHub.", target="_blank")),
+      tags$div("An example marker-cell type reference file is available within the application (click 'Download Example' above the file upload box) and on the ", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/2.-Example-Data', "GitHub.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -6768,7 +6768,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       <br>
       <br>
      "),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.2.-Input-Marker-Descriptors-and-Uploaded-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/4.2.-Input-Marker-Descriptors-and-Uploaded-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -7512,7 +7512,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       A data frame is displayed, showing the original marker names and any suggested names. The last column, 'Type New Marker Name', is editable, allowing users to propose new names. These new names will be reprocessed to check for matches within the multistep workflow.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -7657,26 +7657,26 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       wikidata_taxon_ID <- df$item
 
       # List of specific protein suggestions
-      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
+      marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
       # List of GO complexes that are included in CL definitions
-      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
+      GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
       ## List of CD synonym (adapted from list published by HCDM)
-      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
+      CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
       # Auto replacements
-      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
+      replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
       ## Lists of non-specific suggestions
       # List of non-protein words that were found in markers from the deveolpment data
-      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
+      common_non_protein_words <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/common_non_protein_words_V1.csv", header = FALSE)
 
       # List of metal tags that were found in the development data
-      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
+      commonly_used_metal_tags <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/commonly_used_metal_tags_V1.csv", header = FALSE)
 
       # List of fluorophores tags that were  found in the development data
-      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
+      commonly_used_fluorophores <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/commonly_used_fluorophores_V1.csv", header = FALSE)
 
       # Make markers uppercase and remove dashes, underscores, periods, and spaces
       new_df$Marker2 <- toupper(new_df$Marker)
@@ -8366,7 +8366,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       Users can download the matched terms in CSV format using the 'Download' button.
       <br>
       <br>"),
-      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
@@ -8671,13 +8671,13 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     wikidata_taxon_ID <- df$item
 
     # List of specific protein suggestions
-    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
+    marker_alt <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/specific_suggestions_V1.csv", header = TRUE)
 
     # List of GO complexes that are included in CL definitions
-    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
+    GO_complexes <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/GO_complexes_V1.csv", header = TRUE)
 
     ## List of CD synonym (adapted from list published by HCDM)
-    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
+    CD_syn <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Curated_synonyms_V1.csv", header = TRUE)
 
     # Make markers uppercase and remove dashes, underscores, periods, and spaces
     new_df$Marker2 <- toupper(new_df$`Type new marker name`)
@@ -8704,7 +8704,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     # Automatically make any inputs of CD3e, CD8a, and TCR match to the wider complex
 
     # Auto replacements
-    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AmandaRT18/Cell.Naming/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
+    replace_markers <- utils::read.csv("https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/replace_markers_V1.csv", header=TRUE)
 
             # If TCR is also specified in the panel, don't auto match CD3E to it
     if (any(auto_matches=="TCRAB") | any(auto_matches=="TCRA/B" ) | 
@@ -9252,7 +9252,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       The 'Download' button at the bottom allows users to export a CSV file containing all relevant data, including additional columns detailing the number of markers in the input, CL cell types, matches, and contradictions.
       <br>
       <br>"),
-      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AmandaRT18/Cell.Naming/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
+      tags$div("Equation 3 and additional information can be found", tags$a(href = 'https://github.com/AndorfLab/CytoPheno/wiki/4.1.-Input-Marker-Descriptors-and-Default-References', "here.", target="_blank")),
       easyClose = TRUE))
   })
 
