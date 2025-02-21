@@ -245,7 +245,7 @@ ui_app <- function(req){
     )),
 
     # Title of app
-    h1(strong("Descriptive Cell Type Naming")),
+    h1(strong("CytoPheno")),
 
     shiny::tabsetPanel(
 
