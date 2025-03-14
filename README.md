@@ -34,5 +34,7 @@ Post-clustered expression data is inputted via the **Input Expression Data** tab
 # Citation
 
 [CytoPheno: Automated descriptive cell type naming in flow and mass cytometry
+
 Amanda R Tursi, Celine S Lages, Kenneth Quayle, Zachary T Koenig, Rashi Loni, Shruti Eswar, Jose Cobena-Reyes, Sherry Thornton, Tamara Tilburgs, Sandra Andorf
+
 bioRxiv 2025.03.11.639902; doi: https://doi.org/10.1101/2025.03.11.639902](https://www.biorxiv.org/content/10.1101/2025.03.11.639902v1)
