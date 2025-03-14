@@ -32,7 +32,5 @@ Post-clustered expression data is inputted via the **Input Expression Data** tab
 **5. [Side-Panel Uploads and Parameters](https://github.com/AndorfLab/CytoPheno/wiki/5.-Side-Panel-Uploads-and-Parameters)** – Detailed info about all upload boxes and parameter widgets within the left-sided panel  
 
 # Citation
-
-[CytoPheno: Automated descriptive cell type naming in flow and mass cytometry  
-Amanda R Tursi, Celine S Lages, Kenneth Quayle, Zachary T Koenig, Rashi Loni, Shruti Eswar, Jose Cobena-Reyes, Sherry Thornton, Tamara Tilburgs, Sandra Andorf  
-bioRxiv 2025.03.11.639902; doi: https://doi.org/10.1101/2025.03.11.639902](https://www.biorxiv.org/content/10.1101/2025.03.11.639902v1)
+[Tursi, A. R., Lages, C. S., Quayle, K., Koenig, Z. T., Loni, R., Eswar, S., Cobena-Reyes, J., Thornton, S., Tilburgs, T., & Andorf, S. (2025).
+CytoPheno: Automated descriptive cell type naming in flow and mass cytometry. bioRxiv. https://doi.org/10.1101/2025.03.11.639902](https://www.biorxiv.org/content/10.1101/2025.03.11.639902v1)
