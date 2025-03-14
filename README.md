@@ -30,3 +30,9 @@ Post-clustered expression data is inputted via the **Input Expression Data** tab
 * **4.2. [Input Marker Descriptors and Uploaded References](https://github.com/AndorfLab/CytoPheno/wiki/4.2.-Input-Marker-Descriptors-and-Uploaded-References)** – Information about the application steps when using inputted marker descriptions and uploaded (CSV file) references  
 
 **5. [Side-Panel Uploads and Parameters](https://github.com/AndorfLab/CytoPheno/wiki/5.-Side-Panel-Uploads-and-Parameters)** – Detailed info about all upload boxes and parameter widgets within the left-sided panel  
+
+# Citation
+
+[CytoPheno: Automated descriptive cell type naming in flow and mass cytometry
+Amanda R Tursi, Celine S Lages, Kenneth Quayle, Zachary T Koenig, Rashi Loni, Shruti Eswar, Jose Cobena-Reyes, Sherry Thornton, Tamara Tilburgs, Sandra Andorf
+bioRxiv 2025.03.11.639902; doi: https://doi.org/10.1101/2025.03.11.639902](https://www.biorxiv.org/content/10.1101/2025.03.11.639902v1)
