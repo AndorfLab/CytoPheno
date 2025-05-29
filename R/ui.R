@@ -31,6 +31,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 
+options(shiny.maxRequestSize = 400 * 1024^2)
+
 source("get-input_choices.R")
 source("get-species.R")
 source("endpoints.R")
