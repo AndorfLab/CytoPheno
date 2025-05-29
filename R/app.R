@@ -18,7 +18,7 @@ source("./R/ui.R")
 source("./R/server.R")
 
 # Increase max file upload limit
-options(shiny.maxRequestSize = 60 * 1024^2)
+options(shiny.maxRequestSize = 400 * 1024^2)
 
 shinyApp(
   ui = ui_app,
