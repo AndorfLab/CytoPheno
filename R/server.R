@@ -50,9 +50,6 @@ source("endpoints.R")
 source("protein_SPARQL.R")
 source("integer_breaks.R")
 
-# Increase max size for uploaded files
-options(shiny.maxRequestSize = 60*1024^2)
-
 server_app <- function(input, output, session) {
  
  url1 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Kimmey_5hr_stim.csv"
