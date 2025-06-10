@@ -1,7 +1,7 @@
 
-# ${{\color{#980DC9}\Huge{\textsf{CytoPheno}}}}\$ 
+# CytoPheno 
 
-# Overview
+## Overview
 This is a R Shiny application that intakes post-clustered cytometry data and denotes marker description patterns and descriptive cell type names.
 
 Specifically, the full application takes post-clustering flow or mass cytometry expression data as the input, returns marker definitions per cluster (Part 1), standardizes marker names (Part 2), and finally matches to cell type names (Part 3). 
@@ -12,7 +12,7 @@ Specifically, the full application takes post-clustering flow or mass cytometry 
 Post-clustered expression data is inputted via the **Input Expression Data** tab within the application. If the user prefers to directly input marker descriptions (e.g. CD4+, CD8-) and skip Part 1, they can do so through the **Input Marker Descriptors** tab.
 
 
-# Index
+## Index
 **1. [Installation](https://github.com/AndorfLab/CytoPheno/wiki/1.-Installation)** – Installation instructions and R packages that are required to run the application  
 
 **2. [Example Data](https://github.com/AndorfLab/CytoPheno/wiki/2.-Example-Data)** – Example datasets that can be used to demonstrate the application   
@@ -31,6 +31,6 @@ Post-clustered expression data is inputted via the **Input Expression Data** tab
 
 **5. [Side-Panel Uploads and Parameters](https://github.com/AndorfLab/CytoPheno/wiki/5.-Side-Panel-Uploads-and-Parameters)** – Detailed info about all upload boxes and parameter widgets within the left-sided panel  
 
-# Citation
+## Citation
 [Tursi, A. R., Lages, C. S., Quayle, K., Koenig, Z. T., Loni, R., Eswar, S., Cobena-Reyes, J., Thornton, S., Tilburgs, T., & Andorf, S. (2025).
 CytoPheno: Automated descriptive cell type naming in flow and mass cytometry. bioRxiv. https://doi.org/10.1101/2025.03.11.639902](https://www.biorxiv.org/content/10.1101/2025.03.11.639902v1)
