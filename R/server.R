@@ -470,11 +470,11 @@ server_app <- function(input, output, session) {
       HTML("A marker is classified as null across all clusters if:
       <br>
       <br>
-      <li>The minimum median across all clusters is below a certain threshold (default = 0.2)</li>
+      <li>The minimum median across all clusters is below a certain threshold (default = 0.3)</li>
       <br>
       <li>The maximum median across clusters is below another value (default = 0.7)</li>
       <br>
-      <li>The overall standard deviation is below a third threshold (default = 0.5)</li>
+      <li>The overall standard deviation is below a third threshold (default = 1)</li>
       "),
       easyClose = TRUE))
   })
@@ -507,9 +507,9 @@ server_app <- function(input, output, session) {
         type_stdr_positive_cutoff <- 0.7
 
         # Marker designated as completely null
-        type_med_negative_cutoff <- 0.2
+        type_med_negative_cutoff <- 0.3
         type_max_med_negative_cutoff <- 0.7
-        type_stdr_negative_cutoff <- 0.5
+        type_stdr_negative_cutoff <- 1
 
       } else if (input$marker_diff_eq_option == 'choose_marker_diff_eq') {
 
@@ -714,9 +714,9 @@ server_app <- function(input, output, session) {
       type_stdr_positive_cutoff <- 0.7
 
       # Marker designated as completely null
-      type_med_negative_cutoff <- 0.2
+      type_med_negative_cutoff <- 0.3
       type_max_med_negative_cutoff <- 0.7
-      type_stdr_negative_cutoff <- 0.5
+      type_stdr_negative_cutoff <- 1
 
     } else if (input$marker_diff_eq_option == 'choose_marker_diff_eq') {
 
@@ -1357,9 +1357,9 @@ server_app <- function(input, output, session) {
       type_stdr_positive_cutoff <- 0.7
 
       # Marker designated as completely null
-      type_med_negative_cutoff <- 0.2
+      type_med_negative_cutoff <- 0.3
       type_max_med_negative_cutoff <- 0.7
-      type_stdr_negative_cutoff <- 0.5
+      type_stdr_negative_cutoff <- 1
 
     } else if (input$marker_diff_eq_option == 'choose_marker_diff_eq') {
 
