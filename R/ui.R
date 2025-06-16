@@ -422,7 +422,7 @@ ui_app <- function(req){
                                                                                                shiny::numericInput(
                                                                                                  inputId = "type_med_negative_cutoff",
                                                                                                  label = HTML(paste("Set minimum median cutoff <br />  (minimum must be below this value) <br /> ")),
-                                                                                                 value = 0.2,
+                                                                                                 value = 0.3,
                                                                                                  width = NULL
                                                                                                ),
 
@@ -438,7 +438,7 @@ ui_app <- function(req){
                                                                                                shiny::numericInput(
                                                                                                  inputId = "type_stdr_negative_cutoff",
                                                                                                  label = HTML(paste("Set standard deviation cutoff <br /> (standard deviation must be below this value) <br />")),
-                                                                                                 value = 0.5,
+                                                                                                 value = 1,
                                                                                                  width = NULL
                                                                                                ),
                                                                                              ),
