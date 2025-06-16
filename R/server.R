@@ -54,7 +54,7 @@ source("integer_breaks.R")
 
 server_app <- function(input, output, session) {
  
- url1 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Kimmey_5hr_stim.csv"
+ url1 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/spectral_example_data.csv"
  Kimmey_5hr_stim <- read.csv(url1, header = TRUE)  
 
  url2 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Dusoswa_OMIP_54_markers.csv"
