@@ -55,7 +55,7 @@ source("integer_breaks.R")
 server_app <- function(input, output, session) {
  
  url1 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/spectral_example_data.csv"
- Kimmey_5hr_stim <- read.csv(url1, header = TRUE)  
+ spectral_example_data <- read.csv(url1, header = TRUE)  
 
  url2 <-"https://raw.githubusercontent.com/AndorfLab/CytoPheno/refs/heads/main/data/Dusoswa_OMIP_54_markers.csv"
  Dusoswa_OMIP_54_markers <- read.csv(url2, header = TRUE) 
@@ -76,11 +76,11 @@ server_app <- function(input, output, session) {
   output$download_example_expression_cluster <- shiny::downloadHandler(
     # File name
     filename = function() {
-      c("Kimmey_5hr_stim.csv")
+      c("spectral_example_data.csv")
     },
     # Write to csv
     content = function(file) {
-      utils::write.csv(Kimmey_5hr_stim, file, row.names = FALSE) 
+      utils::write.csv(spectral_example_data, file, row.names = FALSE) 
     }
   )
 
