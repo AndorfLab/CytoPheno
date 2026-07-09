@@ -97,7 +97,7 @@ for (col in required_cols) {
     species_in_PRO[[col]] <- NA_character_
   }
 }
-  
+
 # Remove unneeded info
 species_in_PRO <- species_in_PRO %>% dplyr::select(-ends_with(c(".type", ".datatype", "lang")))
 
