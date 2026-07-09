@@ -81,6 +81,23 @@ species_in_PRO <- jsonlite::fromJSON(x, flatten = TRUE)
 # Extract the dataframe
 species_in_PRO <- species_in_PRO$results$bindings
 
+# Required columns
+names(species_in_PRO) <- sub("\\.value$", "", names(species_in_PRO))
+
+required_cols <- c(
+  "species_ID",
+  "species_name",
+  "broad_synonym",
+  "exact_synonym",
+  "related_synonym_2"
+)
+
+for (col in required_cols) {
+  if (!col %in% names(species_in_PRO)) {
+    species_in_PRO[[col]] <- NA_character_
+  }
+}
+  
 # Remove unneeded info
 species_in_PRO <- species_in_PRO %>% dplyr::select(-ends_with(c(".type", ".datatype", "lang")))
 
