@@ -3795,110 +3795,159 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
   # Step 5, see if inputed marker is in reference
   markers_in_ref <- shiny::eventReactive(input$submit_tab1_step4, {
-
-    if (length(input$ontology_type_1) == 1) {
-      if (input$ontology_type_1 == 'internal_CL_1') {
-        ontology_URI <- "<http://purl.obolibrary.org/obo/merged/CL>"
-      } else if (input$ontology_type_1 == 'internal_pCL_1') {
-        ontology_URI <- "<http://purl.obolibrary.org/obo/merged/PCL>"
-      }
-    } else if (length(input$ontology_type_1) == 2) {
-      ontology_URI <- "<http://purl.obolibrary.org/obo/merged/CL> FROM <http://purl.obolibrary.org/obo/merged/PCL>"
-    }
-
+    
     relationship_type1 <- "<http://purl.obolibrary.org/obo/RO_0002104>"
     relationship_type2 <- "<http://purl.obolibrary.org/obo/RO_0015015>"
     relationship_type3 <- "<http://purl.obolibrary.org/obo/RO_0015016>"
     relationship_type4 <- "<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part>"
     relationship_type5 <- "<http://purl.obolibrary.org/obo/CL_4030046>"
     relationship_type6 <- "<http://purl.obolibrary.org/obo/BFO_0000051>"
-
-    # SPARQL query
-    query <-
-
-      paste0(
-        "
-  PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-  PREFIX owl: <http://www.w3.org/2002/07/owl#>
-  PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
-
-  SELECT DISTINCT ?Related_protein ?Protein_name ?Relationship_type
-
-  FROM ",
-        ontology_URI,
-        "
-
-  WHERE
-  {
-
-  ?CL_term rdfs:label ?Cell_type .
-
-  ?CL_term rdf:type ?type .
-
-  ?CL_term  rdfs:subClassOf* ?Class_of .
-
-  OPTIONAL {
-    ?CL_term rdfs:comment ?Cell_comment .
-    }
-
-  OPTIONAL {
-    ?Class_of owl:onProperty ?Relationship_type .
-    }
-
-  OPTIONAL {
-    ?Class_of owl:someValuesFrom ?Related_protein .
-    ?Related_protein rdfs:label ?Protein_name
-  }
-
-  FILTER (?Relationship_type =", relationship_type1, "|| ?Relationship_type =", relationship_type2, "|| ?Relationship_type =", relationship_type3, "|| ?Relationship_type =", relationship_type4, "|| ?Relationship_type =", relationship_type5, "|| ?Relationship_type =", relationship_type6, ")
-
-    }
-  "
+    
+    # Helper function to query one ontology at a time
+    query_ontology <- function(ontology_URI) {
+      
+      query <- paste0(
+              "
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+      
+      SELECT DISTINCT ?Related_protein ?Protein_name ?Relationship_type
+      
+      FROM ",
+              ontology_URI,
+              "
+      
+      WHERE
+      {
+      
+      ?CL_term rdfs:label ?Cell_type .
+      
+      ?CL_term rdf:type ?type .
+      
+      ?CL_term rdfs:subClassOf* ?Class_of .
+      
+      OPTIONAL {
+        ?CL_term rdfs:comment ?Cell_comment .
+      }
+      
+      OPTIONAL {
+        ?Class_of owl:onProperty ?Relationship_type .
+      }
+      
+      OPTIONAL {
+        ?Class_of owl:someValuesFrom ?Related_protein .
+        ?Related_protein rdfs:label ?Protein_name
+      }
+      
+      FILTER (
+        ?Relationship_type =", relationship_type1, " ||
+        ?Relationship_type =", relationship_type2, " ||
+        ?Relationship_type =", relationship_type3, " ||
+        ?Relationship_type =", relationship_type4, " ||
+        ?Relationship_type =", relationship_type5, " ||
+        ?Relationship_type =", relationship_type6, "
       )
-
-    # Run SPARQL on the endpoint
-    result <- httr::POST(onto_endpoint,
-                         body = list(query = query),
-                         httr::user_agent(R.version.string))
-
-    # Will show a warning/error if there is any
-    httr::stop_for_status(result)
-
-    # Get result in text JSON
-    x <- httr::content(result, "text", encoding = "UTF-8")
-
-    # Convert from JSON to a list
-    df <- jsonlite::fromJSON(x, flatten = TRUE)
-
-    # Extract the dataframe
-    df <- df$results$bindings
-
-    # Put the results in a list of data frames
-    if (length(df) != 0) {
-
-      # Remove unneeded info
-      df <- df %>% dplyr::select(-dplyr::ends_with(c(".type", ".datatype", "lang")))
-
-      # Remove this part that was added onto the column names
-      colnames(df) <- gsub(".value", "", colnames(df))
-    }
-
-    # Only get relevant relationship types for PRO/GO terms
-    just_PRO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/PR_"))
-    just_GO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/GO_") & Relationship_type != "http://purl.obolibrary.org/obo/BFO_0000051")
-
-    # Combine
-    df <- rbind(just_PRO, just_GO)
-
-    # Only keep first 2 columns
-    df <- df[ , c("Related_protein","Protein_name")]
-
-    # Remove duplicates
-    df <- df[!duplicated(df), ]
-
-    return(df)
-  })
+      
+      }
+      "
+            )
+        
+        result <- httr::POST(
+          onto_endpoint,
+          body = list(query = query),
+          httr::user_agent(R.version.string)
+        )
+        
+        if (httr::status_code(result) != 200) {
+          
+          cat("\nSERVER RESPONSE:\n")
+          cat(httr::content(result, "text", encoding = "UTF-8"))
+          cat("\n")
+          
+          stop("Ontology query failed.")
+        }
+        
+        x <- httr::content(result, "text", encoding = "UTF-8")
+        
+        df <- jsonlite::fromJSON(x, flatten = TRUE)
+        
+        df <- df$results$bindings
+        
+        return(df)
+          }
+      
+      # Query selected ontology/ontologies
+      if (length(input$ontology_type_1) == 1) {
+        
+        if (input$ontology_type_1 == "internal_CL_1") {
+          
+          df <- query_ontology(
+            "<http://purl.obolibrary.org/obo/merged/CL>"
+          )
+          
+        } else {
+          
+          df <- query_ontology(
+            "<http://purl.obolibrary.org/obo/merged/PCL>"
+          )
+        }
+        
+      } else if (length(input$ontology_type_1) == 2) {
+        
+        df_cl <- query_ontology(
+          "<http://purl.obolibrary.org/obo/merged/CL>"
+        )
+        
+        df_pcl <- query_ontology(
+          "<http://purl.obolibrary.org/obo/merged/PCL>"
+        )
+        
+        df <- dplyr::bind_rows(df_cl, df_pcl)
+        
+        df <- dplyr::distinct(df)
+        
+      }
+      
+      # Put the results in a list of data frames
+      if (length(df) != 0) {
+        
+        df <- df %>%
+          dplyr::select(-dplyr::ends_with(c(".type", ".datatype", "lang")))
+        
+        colnames(df) <- gsub(".value", "", colnames(df))
+      }
+      
+      # Only get relevant relationship types for PRO/GO terms
+      just_PRO <- subset(
+        df,
+        startsWith(
+          as.character(Related_protein),
+          "http://purl.obolibrary.org/obo/PR_"
+        )
+      )
+      
+      just_GO <- subset(
+        df,
+        startsWith(
+          as.character(Related_protein),
+          "http://purl.obolibrary.org/obo/GO_"
+        ) &
+          Relationship_type != "http://purl.obolibrary.org/obo/BFO_0000051"
+      )
+      
+      # Combine
+      df <- rbind(just_PRO, just_GO)
+      
+      # Only keep first 2 columns
+      df <- df[, c("Related_protein", "Protein_name")]
+      
+      # Remove duplicates
+      df <- df[!duplicated(df), ]
+      
+      return(df)
+        })
 
   # Step 5, match inputted proteins to entries in the Protein Ontology, get PRO IDs
   #  Make PRO link clickable
@@ -8518,10 +8567,10 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     relationship_type5 <- "<http://purl.obolibrary.org/obo/CL_4030046>"
     relationship_type6 <- "<http://purl.obolibrary.org/obo/BFO_0000051>"
 
-    # SPARQL query
-    query <-
-
-      paste0(
+    # Helper function to query one ontology at a time
+    query_ontology <- function(ontology_URI) {
+      
+      query <- paste0(
         "
   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -8556,57 +8605,73 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     ?Related_protein rdfs:label ?Protein_name
   }
 
-  FILTER (?Relationship_type =", relationship_type1, "|| ?Relationship_type =", relationship_type2, "|| ?Relationship_type =", relationship_type3, "|| ?Relationship_type =", relationship_type4, "|| ?Relationship_type =", relationship_type5, "|| ?Relationship_type =", relationship_type6, ")
+  FILTER (
+    ?Relationship_type =", relationship_type1, " ||
+    ?Relationship_type =", relationship_type2, " ||
+    ?Relationship_type =", relationship_type3, " ||
+    ?Relationship_type =", relationship_type4, " ||
+    ?Relationship_type =", relationship_type5, " ||
+    ?Relationship_type =", relationship_type6, "
+  )
 
     }
   "
       )
-
-    # Run SPARQL on the endpoint
-    result <- httr::POST(onto_endpoint,
-                         body = list(query = query),
-                         httr::user_agent(R.version.string))
-
-    # Will show a warning/error if there is any
-    httr::stop_for_status(result)
-
-    # Get result in text JSON
-    x <- httr::content(result, "text", encoding = "UTF-8")
-
-    # Convert from JSON to a list
-    df <- jsonlite::fromJSON(x, flatten = TRUE)
-
-    # Extract the dataframe
-    df <- df$results$bindings
-
-    # Put the results in a list of data frames
-    if (length(df) != 0) {
-
-      # Remove unneeded info
-      df <- df %>% dplyr::select(-dplyr::ends_with(c(".type", ".datatype", "lang")))
-
-      # Remove this part that was added onto the column names
-      colnames(df) <- gsub(".value", "", colnames(df))
+      
+      result <- httr::POST(
+        onto_endpoint,
+        body = list(query = query),
+        httr::user_agent(R.version.string)
+      )
+      
+      if (httr::status_code(result) != 200) {
+        
+        cat("\nSERVER RESPONSE:\n")
+        cat(httr::content(result, "text", encoding = "UTF-8"))
+        cat("\n")
+        
+        stop("Ontology query failed.")
+      }
+      
+      x <- httr::content(result, "text", encoding = "UTF-8")
+      
+      df <- jsonlite::fromJSON(x, flatten = TRUE)
+      
+      df <- df$results$bindings
+      
+      return(df)
     }
-
-    # Only get relevant relationship types for PRO/GO terms
-    just_PRO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/PR_"))
-    just_GO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/GO_") & Relationship_type != "http://purl.obolibrary.org/obo/BFO_0000051")
-
-    # Combine
-    df <- rbind(just_PRO, just_GO)
-
-    # Remove protein identifier
-    df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/PR_000000001", ]
-
-    # Only keep first 2 columns
-    df <- df[ , c("Related_protein","Protein_name")]
-
-    # Remove duplicates
-    df <- df[!duplicated(df), ]
-
-    return(df)
-  })
+    
+    # Query ontology/ontologies
+    if (length(input$ontology_type_2) == 1) {
+      
+      if (input$ontology_type_2 == "internal_CL_2") {
+        
+        df <- query_ontology(
+          "<http://purl.obolibrary.org/obo/merged/CL>"
+        )
+        
+      } else {
+        
+        df <- query_ontology(
+          "<http://purl.obolibrary.org/obo/merged/PCL>"
+        )
+      }
+      
+    } else if (length(input$ontology_type_2) == 2) {
+      
+      df_cl <- query_ontology(
+        "<http://purl.obolibrary.org/obo/merged/CL>"
+      )
+      
+      df_pcl <- query_ontology(
+        "<http://purl.obolibrary.org/obo/merged/PCL>"
+      )
+      
+      df <- dplyr::bind_rows(df_cl, df_pcl)
+      
+      df <- dplyr::distinct(df)  
+    }
 
   # Step 2, look up PRO IDs for the revised marker names
   new_PRO_matches_2 <- shiny::eventReactive(input$submit_tab2_step2, {
