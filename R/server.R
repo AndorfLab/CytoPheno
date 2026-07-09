@@ -8673,6 +8673,35 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       df <- dplyr::distinct(df)  
     }
 
+       # Put the results in a list of data frames
+    if (length(df) != 0) {
+
+      # Remove unneeded info
+      df <- df %>% dplyr::select(-dplyr::ends_with(c(".type", ".datatype", "lang")))
+
+      # Remove this part that was added onto the column names
+      colnames(df) <- gsub(".value", "", colnames(df))
+    }
+
+    # Only get relevant relationship types for PRO/GO terms
+    just_PRO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/PR_"))
+    just_GO <- subset(df, startsWith(as.character(Related_protein),"http://purl.obolibrary.org/obo/GO_") & Relationship_type != "http://purl.obolibrary.org/obo/BFO_0000051")
+
+    # Combine
+    df <- rbind(just_PRO, just_GO)
+
+    # Remove protein identifier
+    df <- df[!df$Related_protein == "http://purl.obolibrary.org/obo/PR_000000001", ]
+
+    # Only keep first 2 columns
+    df <- df[ , c("Related_protein","Protein_name")]
+
+    # Remove duplicates
+    df <- df[!duplicated(df), ]
+
+    return(df)
+  })
+
   # Step 2, look up PRO IDs for the revised marker names
   new_PRO_matches_2 <- shiny::eventReactive(input$submit_tab2_step2, {
 
