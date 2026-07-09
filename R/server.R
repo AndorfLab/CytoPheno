@@ -5466,7 +5466,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           # Split up into smaller chunks to the SPARQL query can handle the filter
           # Number of cell types per query = 100
-          chunk <- 70 #100
+          chunk <- 25
           total_num_rows <- nrow(unq_cell_types)
           how_to_split  <- rep(1:ceiling(total_num_rows/chunk),each=chunk)[1:total_num_rows]
           final_matched_output_list <- split(unq_cell_types,how_to_split)
@@ -10541,7 +10541,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
 
           # Split up into smaller chunks to the SPARQL query can handle the filter
           # Number of cell types per query = 100
-          chunk <- 70 #100
+          chunk <- 25
           total_num_rows <- nrow(unq_cell_types)
           how_to_split  <- rep(1:ceiling(total_num_rows/chunk),each=chunk)[1:total_num_rows]
           final_matched_output_list <- split(unq_cell_types,how_to_split)
