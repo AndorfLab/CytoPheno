@@ -49,7 +49,7 @@
 options(shiny.maxRequestSize = 700 * 1024^2)
 
 source("endpoints.R")
-source("protein_SPARQL.R")
+source("Protein_SPARQL.R")
 source("integer_breaks.R")
 
 server_app <- function(input, output, session) {
