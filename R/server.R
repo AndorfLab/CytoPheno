@@ -2539,7 +2539,7 @@ server_app <- function(input, output, session) {
       result <- httr::GET(
         url = wiki_endpoint,
         query = list(query = SPARQL_query),
-        httr::user_agent(R.version.string))
+        httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
       # Will show a warning/error if there is any
       httr::stop_for_status(result)
@@ -2921,7 +2921,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             result <- httr::GET(
               url = wiki_endpoint,
               query = list(query = SPARQL_query),
-              httr::user_agent(R.version.string))
+              httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
@@ -3326,7 +3326,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     result <- httr::GET(
       url = wiki_endpoint,
       query = list(query = SPARQL_query),
-      httr::user_agent(R.version.string))
+      httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
     # Will show a warning/error if there is any
     httr::stop_for_status(result)
@@ -3598,7 +3598,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           result <- httr::GET(
             url = wiki_endpoint,
             query = list(query = SPARQL_query),
-            httr::user_agent(R.version.string))
+            httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
           # Get result in text JSON
           x <- httr::content(result, as = "text") #, encoding = "UTF-8")
@@ -3857,7 +3857,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
         result <- httr::POST(
           onto_endpoint,
           body = list(query = query),
-          httr::user_agent(R.version.string)
+          httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" )
         )
         
         if (httr::status_code(result) != 200) {
@@ -4613,7 +4613,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result1 <- httr::POST(onto_endpoint,
                                   body = list(query = query1),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result1)
@@ -4699,7 +4699,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result1 <- httr::POST(onto_endpoint,
                                   body = list(query = query1),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result1)
@@ -4783,7 +4783,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result2 <- httr::POST(onto_endpoint,
                                   body = list(query = query2),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result2)
@@ -5201,7 +5201,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result1 <- httr::POST(onto_endpoint,
                                     body = list(query = query1),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result1)
@@ -5285,7 +5285,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result1 <- httr::POST(onto_endpoint,
                                     body = list(query = query1),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result1)
@@ -5369,7 +5369,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result2 <- httr::POST(onto_endpoint,
                                     body = list(query = query2),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result2)
@@ -5567,7 +5567,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result <- httr::POST(onto_endpoint,
                                  body = list(query = query),
-                                 httr::user_agent(R.version.string))
+                                 httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
@@ -5691,7 +5691,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             result <- httr::GET(
               url = wiki_endpoint,
               query = list(query = SPARQL_query),
-              httr::user_agent(R.version.string))
+              httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
@@ -7679,7 +7679,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       result <- httr::GET(
         url = wiki_endpoint,
         query = list(query = SPARQL_query),
-        httr::user_agent(R.version.string))
+        httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
       # Will show a warning/error if there is any
       httr::stop_for_status(result)
@@ -8062,7 +8062,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             result <- httr::GET(
               url = wiki_endpoint,
               query = list(query = SPARQL_query),
-              httr::user_agent(R.version.string))
+              httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
 
             # Will show a warning/error if there is any
@@ -8621,7 +8621,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
       result <- httr::POST(
         onto_endpoint,
         body = list(query = query),
-        httr::user_agent(R.version.string)
+        httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" )
       )
       
       if (httr::status_code(result) != 200) {
@@ -8738,7 +8738,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
     result <- httr::GET(
       url = wiki_endpoint,
       query = list(query = SPARQL_query),
-      httr::user_agent(R.version.string))
+      httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
     # Will show a warning/error if there is any
     httr::stop_for_status(result)
@@ -9010,7 +9010,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
           result <- httr::GET(
             url = wiki_endpoint,
             query = list(query = SPARQL_query),
-            httr::user_agent(R.version.string))
+            httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
           # Get result in text JSON
           x <- httr::content(result, as = "text") #, encoding = "UTF-8")
@@ -9737,7 +9737,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result1 <- httr::POST(onto_endpoint,
                                   body = list(query = query1),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result1)
@@ -9823,7 +9823,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result1 <- httr::POST(onto_endpoint,
                                   body = list(query = query1),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result1)
@@ -9907,7 +9907,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result2 <- httr::POST(onto_endpoint,
                                   body = list(query = query2),
-                                  httr::user_agent(R.version.string))
+                                  httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result2)
@@ -10320,7 +10320,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result1 <- httr::POST(onto_endpoint,
                                     body = list(query = query1),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result1)
@@ -10406,7 +10406,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result1 <- httr::POST(onto_endpoint,
                                     body = list(query = query1),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result1)
@@ -10490,7 +10490,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
               # Run SPARQL on the endpoint
               result2 <- httr::POST(onto_endpoint,
                                     body = list(query = query2),
-                                    httr::user_agent(R.version.string))
+                                    httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
               # Will show a warning/error if there is any
               httr::stop_for_status(result2)
@@ -10687,7 +10687,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             # Run SPARQL on the endpoint
             result <- httr::POST(onto_endpoint,
                                  body = list(query = query),
-                                 httr::user_agent(R.version.string))
+                                 httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
@@ -10809,7 +10809,7 @@ SELECT DISTINCT ?item ?itemLabel ?altLabel WHERE {
             result <- httr::GET(
               url = wiki_endpoint,
               query = list(query = SPARQL_query),
-              httr::user_agent(R.version.string))
+              httr::user_agent( "CytoPheno/1.2.0 (+https://github.com/AndorfLab/CytoPheno)" ))
 
             # Will show a warning/error if there is any
             httr::stop_for_status(result)
